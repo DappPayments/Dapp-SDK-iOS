@@ -15,6 +15,11 @@ public protocol DappPaymentDelegate {
     func dappPaymentSuccess(payment: DappPayment)
 }
 
+public enum PaymentType: Int {
+    case dappBalance = 0
+    case credit, debit
+}
+
 public class DappPayment {
     
     public var id: String!
@@ -25,6 +30,8 @@ public class DappPayment {
     public var reference: String?
     public var currency: String!
     public var client: String!
+    public var paymentType: PaymentType!
+    public var cardLastFour: String?
     
     init(with data: [String: Any]) {
         if let id = data["id"] as? String {
@@ -53,6 +60,14 @@ public class DappPayment {
         
         if let client = data["client"] as? String {
             self.client = client
+        }
+        
+        if let type = data["payment_type"] as? String, let t = Int(type) {
+            self.paymentType = PaymentType(rawValue: t)
+        }
+        
+        if let last4 = data["last4"] as? String {
+            self.cardLastFour = last4
         }
         
         if let stringDate = data["date"] as? String {

@@ -89,11 +89,15 @@ public class Dapp {
         if let propina = getQueryStringParameter(from: url, param: "tip") {
             data["tip"] = Double(propina)
         }
+        if let last4 = getQueryStringParameter(from: url, param: "last4") {
+            data["last4"] = last4
+        }
         data["currency"] = getQueryStringParameter(from: url, param: "currency")
         data["description"] = getQueryStringParameter(from: url, param: "description")
         data["reference"] = getQueryStringParameter(from: url, param: "reference")
         data["date"] = getQueryStringParameter(from: url, param: "date")
         data["client"] = getQueryStringParameter(from: url, param: "client")
+        data["payment_type"] = getQueryStringParameter(from: url, param: "payment_type")
         
         NotificationCenter.default.post(name: Dapp.callbackNotification, object: nil)
         let payment = DappPayment(with: data)

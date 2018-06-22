@@ -73,7 +73,6 @@
 				3297856B1F2992EF0097B82A /* DappCard.swift */,
 				3297856C1F2992EF0097B82A /* DappError.swift */,
 				3297856D1F2992EF0097B82A /* DappLoadingViewController.swift */,
-				3297856E1F2992EF0097B82A /* DappLoadingViewController.xib */,
 				3297856F1F2992EF0097B82A /* DappPayment.swift */,
 				329785521F298E120097B82A /* dapp-sdk-ios.h */,
 				329785531F298E120097B82A /* Info.plist */,
@@ -84,6 +83,7 @@
 		3297857F1F2999A80097B82A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3297856E1F2992EF0097B82A /* DappLoadingViewController.xib */,
 				329785831F2999E00097B82A /* dapp_icon@1x.png */,
 				329785841F2999E00097B82A /* dapp_icon@2x.png */,
 				329785851F2999E00097B82A /* dapp_icon@3x.png */,
