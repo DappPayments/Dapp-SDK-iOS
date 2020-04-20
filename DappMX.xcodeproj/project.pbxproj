@@ -1,0 +1,1107 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70B131F2243D2149002591F4 /* DappMX.h in Headers */ = {isa = PBXBuildFile; fileRef = 70B131F0243D2149002591F4 /* DappMX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70B131FA243D218B002591F4 /* DappMX.h in Headers */ = {isa = PBXBuildFile; fileRef = 70B131F0243D2149002591F4 /* DappMX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70B13207243D2215002591F4 /* Dapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13204243D2215002591F4 /* Dapp.swift */; };
+		70B13208243D2215002591F4 /* DappPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13205243D2215002591F4 /* DappPayment.swift */; };
+		70B13209243D2215002591F4 /* DictionaryExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13206243D2215002591F4 /* DictionaryExt.swift */; };
+		70B1320E243D22D3002591F4 /* DappCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1320B243D22D3002591F4 /* DappCodeProtocol.swift */; };
+		70B1320F243D22D3002591F4 /* DappPOSCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1320C243D22D3002591F4 /* DappPOSCodeProtocol.swift */; };
+		70B13210243D22D3002591F4 /* DappRPCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1320D243D22D3002591F4 /* DappRPCodeProtocol.swift */; };
+		70B13213243D22EE002591F4 /* DappError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13212243D22EE002591F4 /* DappError.swift */; };
+		70B13218243D2383002591F4 /* DappApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13215243D2383002591F4 /* DappApiProtocol.swift */; };
+		70B13219243D2383002591F4 /* DappHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13216243D2383002591F4 /* DappHttpClient.swift */; };
+		70B1321A243D2383002591F4 /* DappWSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13217243D2383002591F4 /* DappWSClient.swift */; };
+		70B1321F243D23B5002591F4 /* DappScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1321C243D23B5002591F4 /* DappScannerView.swift */; };
+		70B13220243D23B5002591F4 /* DappScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1321D243D23B5002591F4 /* DappScannerViewController.swift */; };
+		70B13221243D23B5002591F4 /* DappLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1321E243D23B5002591F4 /* DappLoadingView.swift */; };
+		70B13224243D23E0002591F4 /* DappMX.h in Headers */ = {isa = PBXBuildFile; fileRef = 70B131F0243D2149002591F4 /* DappMX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70B13226243D23E0002591F4 /* DappError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13212243D22EE002591F4 /* DappError.swift */; };
+		70B13227243D23E0002591F4 /* DappHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13216243D2383002591F4 /* DappHttpClient.swift */; };
+		70B13228243D23E0002591F4 /* DappApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13215243D2383002591F4 /* DappApiProtocol.swift */; };
+		70B13229243D23E0002591F4 /* DappScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1321C243D23B5002591F4 /* DappScannerView.swift */; };
+		70B1322A243D23E0002591F4 /* DappScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1321D243D23B5002591F4 /* DappScannerViewController.swift */; };
+		70B1322B243D23E0002591F4 /* DappPOSCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1320C243D22D3002591F4 /* DappPOSCodeProtocol.swift */; };
+		70B1322C243D23E0002591F4 /* Dapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13204243D2215002591F4 /* Dapp.swift */; };
+		70B1322D243D23E0002591F4 /* DappWSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13217243D2383002591F4 /* DappWSClient.swift */; };
+		70B1322E243D23E0002591F4 /* DappLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1321E243D23B5002591F4 /* DappLoadingView.swift */; };
+		70B1322F243D23E0002591F4 /* DappCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1320B243D22D3002591F4 /* DappCodeProtocol.swift */; };
+		70B13230243D23E0002591F4 /* DappPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13205243D2215002591F4 /* DappPayment.swift */; };
+		70B13231243D23E0002591F4 /* DictionaryExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13206243D2215002591F4 /* DictionaryExt.swift */; };
+		70B13232243D23E0002591F4 /* DappRPCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1320D243D22D3002591F4 /* DappRPCodeProtocol.swift */; };
+		70B1323F243D2451002591F4 /* DappCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1323B243D2451002591F4 /* DappCard.swift */; };
+		70B13240243D2451002591F4 /* DappCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1323C243D2451002591F4 /* DappCode.swift */; };
+		70B13241243D2451002591F4 /* DappEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1323D243D2451002591F4 /* DappEncryption.swift */; };
+		70B13242243D2451002591F4 /* DappApiCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1323E243D2451002591F4 /* DappApiCustomer.swift */; };
+		70B13246243D2546002591F4 /* DappMX.h in Headers */ = {isa = PBXBuildFile; fileRef = 70B131F0243D2149002591F4 /* DappMX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70B13248243D2546002591F4 /* DappError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13212243D22EE002591F4 /* DappError.swift */; };
+		70B13249243D2546002591F4 /* DappHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13216243D2383002591F4 /* DappHttpClient.swift */; };
+		70B1324A243D2546002591F4 /* DappApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13215243D2383002591F4 /* DappApiProtocol.swift */; };
+		70B1324B243D2546002591F4 /* DappScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1321C243D23B5002591F4 /* DappScannerView.swift */; };
+		70B1324C243D2546002591F4 /* DappScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1321D243D23B5002591F4 /* DappScannerViewController.swift */; };
+		70B1324D243D2546002591F4 /* DappPOSCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1320C243D22D3002591F4 /* DappPOSCodeProtocol.swift */; };
+		70B1324E243D2546002591F4 /* Dapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13204243D2215002591F4 /* Dapp.swift */; };
+		70B1324F243D2546002591F4 /* DappWSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13217243D2383002591F4 /* DappWSClient.swift */; };
+		70B13250243D2546002591F4 /* DappLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1321E243D23B5002591F4 /* DappLoadingView.swift */; };
+		70B13251243D2546002591F4 /* DappCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1320B243D22D3002591F4 /* DappCodeProtocol.swift */; };
+		70B13252243D2546002591F4 /* DappPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13205243D2215002591F4 /* DappPayment.swift */; };
+		70B13253243D2546002591F4 /* DictionaryExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13206243D2215002591F4 /* DictionaryExt.swift */; };
+		70B13254243D2546002591F4 /* DappRPCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1320D243D22D3002591F4 /* DappRPCodeProtocol.swift */; };
+		70B1325D243D2597002591F4 /* DappApiVendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1325C243D2597002591F4 /* DappApiVendor.swift */; };
+		70B13261243D25E9002591F4 /* DappPOSCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1325F243D25E9002591F4 /* DappPOSCodeHelper.swift */; };
+		70B13262243D25E9002591F4 /* DappPOSCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13260243D25E9002591F4 /* DappPOSCode.swift */; };
+		70B13266243D262C002591F4 /* DappRPCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13264243D262C002591F4 /* DappRPCodeScannerViewController.swift */; };
+		70B13267243D262C002591F4 /* DappRPCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13265243D262C002591F4 /* DappRPCode.swift */; };
+		70B1326C243D2701002591F4 /* DappMX.h in Headers */ = {isa = PBXBuildFile; fileRef = 70B131F0243D2149002591F4 /* DappMX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70B1326E243D2701002591F4 /* DappError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13212243D22EE002591F4 /* DappError.swift */; };
+		70B1326F243D2701002591F4 /* DappHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13216243D2383002591F4 /* DappHttpClient.swift */; };
+		70B13270243D2701002591F4 /* DappApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13215243D2383002591F4 /* DappApiProtocol.swift */; };
+		70B13271243D2701002591F4 /* DappScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1321C243D23B5002591F4 /* DappScannerView.swift */; };
+		70B13272243D2701002591F4 /* DappScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1321D243D23B5002591F4 /* DappScannerViewController.swift */; };
+		70B13273243D2701002591F4 /* DappPOSCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1320C243D22D3002591F4 /* DappPOSCodeProtocol.swift */; };
+		70B13274243D2701002591F4 /* Dapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13204243D2215002591F4 /* Dapp.swift */; };
+		70B13275243D2701002591F4 /* DappWSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13217243D2383002591F4 /* DappWSClient.swift */; };
+		70B13276243D2701002591F4 /* DappLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1321E243D23B5002591F4 /* DappLoadingView.swift */; };
+		70B13277243D2701002591F4 /* DappCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1320B243D22D3002591F4 /* DappCodeProtocol.swift */; };
+		70B13278243D2701002591F4 /* DappPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13205243D2215002591F4 /* DappPayment.swift */; };
+		70B13279243D2701002591F4 /* DictionaryExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13206243D2215002591F4 /* DictionaryExt.swift */; };
+		70B1327A243D2701002591F4 /* DappRPCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1320D243D22D3002591F4 /* DappRPCodeProtocol.swift */; };
+		70B13284243D28B8002591F4 /* DappApiWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13282243D28B8002591F4 /* DappApiWallet.swift */; };
+		70B13285243D28B8002591F4 /* DappUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13283243D28B8002591F4 /* DappUser.swift */; };
+		70B13289243D290C002591F4 /* DappPOSCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13287243D290C002591F4 /* DappPOSCode.swift */; };
+		70B1328A243D290C002591F4 /* DappPOSCodeScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13288243D290C002591F4 /* DappPOSCodeScannerController.swift */; };
+		70B1328E243D2948002591F4 /* DappRPCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1328C243D2948002591F4 /* DappRPCode.swift */; };
+		70B1328F243D2948002591F4 /* DappRPCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1328D243D2948002591F4 /* DappRPCodeHelper.swift */; };
+		70CBF7D4243E413C0048EF61 /* dapp_prod.pem in Resources */ = {isa = PBXBuildFile; fileRef = 70CBF7D2243E413C0048EF61 /* dapp_prod.pem */; };
+		70CBF7D5243E413C0048EF61 /* dapp_sandbox.pem in Resources */ = {isa = PBXBuildFile; fileRef = 70CBF7D3243E413C0048EF61 /* dapp_sandbox.pem */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		70B131ED243D2149002591F4 /* DappMX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DappMX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70B131F0243D2149002591F4 /* DappMX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DappMX.h; sourceTree = "<group>"; };
+		70B131F1243D2149002591F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70B13201243D218B002591F4 /* DappCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DappCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70B13202243D218B002591F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70B13204243D2215002591F4 /* Dapp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dapp.swift; sourceTree = "<group>"; };
+		70B13205243D2215002591F4 /* DappPayment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappPayment.swift; sourceTree = "<group>"; };
+		70B13206243D2215002591F4 /* DictionaryExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExt.swift; sourceTree = "<group>"; };
+		70B1320B243D22D3002591F4 /* DappCodeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappCodeProtocol.swift; sourceTree = "<group>"; };
+		70B1320C243D22D3002591F4 /* DappPOSCodeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappPOSCodeProtocol.swift; sourceTree = "<group>"; };
+		70B1320D243D22D3002591F4 /* DappRPCodeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappRPCodeProtocol.swift; sourceTree = "<group>"; };
+		70B13212243D22EE002591F4 /* DappError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappError.swift; sourceTree = "<group>"; };
+		70B13215243D2383002591F4 /* DappApiProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappApiProtocol.swift; sourceTree = "<group>"; };
+		70B13216243D2383002591F4 /* DappHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappHttpClient.swift; sourceTree = "<group>"; };
+		70B13217243D2383002591F4 /* DappWSClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappWSClient.swift; sourceTree = "<group>"; };
+		70B1321C243D23B5002591F4 /* DappScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappScannerView.swift; sourceTree = "<group>"; };
+		70B1321D243D23B5002591F4 /* DappScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappScannerViewController.swift; sourceTree = "<group>"; };
+		70B1321E243D23B5002591F4 /* DappLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappLoadingView.swift; sourceTree = "<group>"; };
+		70B13238243D23E0002591F4 /* DappCustomer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DappCustomer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70B13239243D23E0002591F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70B1323B243D2451002591F4 /* DappCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappCard.swift; sourceTree = "<group>"; };
+		70B1323C243D2451002591F4 /* DappCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappCode.swift; sourceTree = "<group>"; };
+		70B1323D243D2451002591F4 /* DappEncryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappEncryption.swift; sourceTree = "<group>"; };
+		70B1323E243D2451002591F4 /* DappApiCustomer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappApiCustomer.swift; sourceTree = "<group>"; };
+		70B1325A243D2546002591F4 /* DappVendor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DappVendor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70B1325B243D2546002591F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70B1325C243D2597002591F4 /* DappApiVendor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappApiVendor.swift; sourceTree = "<group>"; };
+		70B1325F243D25E9002591F4 /* DappPOSCodeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappPOSCodeHelper.swift; sourceTree = "<group>"; };
+		70B13260243D25E9002591F4 /* DappPOSCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappPOSCode.swift; sourceTree = "<group>"; };
+		70B13264243D262C002591F4 /* DappRPCodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappRPCodeScannerViewController.swift; sourceTree = "<group>"; };
+		70B13265243D262C002591F4 /* DappRPCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappRPCode.swift; sourceTree = "<group>"; };
+		70B13280243D2701002591F4 /* DappWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DappWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70B13281243D2751002591F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70B13282243D28B8002591F4 /* DappApiWallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappApiWallet.swift; sourceTree = "<group>"; };
+		70B13283243D28B8002591F4 /* DappUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappUser.swift; sourceTree = "<group>"; };
+		70B13287243D290C002591F4 /* DappPOSCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappPOSCode.swift; sourceTree = "<group>"; };
+		70B13288243D290C002591F4 /* DappPOSCodeScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappPOSCodeScannerController.swift; sourceTree = "<group>"; };
+		70B1328C243D2948002591F4 /* DappRPCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappRPCode.swift; sourceTree = "<group>"; };
+		70B1328D243D2948002591F4 /* DappRPCodeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappRPCodeHelper.swift; sourceTree = "<group>"; };
+		70CBF7D2243E413C0048EF61 /* dapp_prod.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dapp_prod.pem; sourceTree = "<group>"; };
+		70CBF7D3243E413C0048EF61 /* dapp_sandbox.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dapp_sandbox.pem; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70B131EA243D2149002591F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B131FC243D218B002591F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B13233243D23E0002591F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B13255243D2546002591F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B1327B243D2701002591F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70B131E3243D2149002591F4 = {
+			isa = PBXGroup;
+			children = (
+				70B131EF243D2149002591F4 /* DappMX */,
+				70B131EE243D2149002591F4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		70B131EE243D2149002591F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70B131ED243D2149002591F4 /* DappMX.framework */,
+				70B13201243D218B002591F4 /* DappCore.framework */,
+				70B13238243D23E0002591F4 /* DappCustomer.framework */,
+				70B1325A243D2546002591F4 /* DappVendor.framework */,
+				70B13280243D2701002591F4 /* DappWallet.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70B131EF243D2149002591F4 /* DappMX */ = {
+			isa = PBXGroup;
+			children = (
+				70B13203243D21FE002591F4 /* Core */,
+				70B1323A243D240C002591F4 /* Customer */,
+				70B13243243D253A002591F4 /* Vendor */,
+				70B13269243D2654002591F4 /* Wallet */,
+				70B131F0243D2149002591F4 /* DappMX.h */,
+				70B131F1243D2149002591F4 /* Info.plist */,
+			);
+			path = DappMX;
+			sourceTree = "<group>";
+		};
+		70B13203243D21FE002591F4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				70B13202243D218B002591F4 /* Info.plist */,
+				70B13204243D2215002591F4 /* Dapp.swift */,
+				70B13205243D2215002591F4 /* DappPayment.swift */,
+				70B13206243D2215002591F4 /* DictionaryExt.swift */,
+				70B1320A243D22AE002591F4 /* DappCode */,
+				70B13211243D22E0002591F4 /* Errors */,
+				70B13214243D235B002591F4 /* Network */,
+				70B1321B243D239D002591F4 /* Scanner */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		70B1320A243D22AE002591F4 /* DappCode */ = {
+			isa = PBXGroup;
+			children = (
+				70B1320B243D22D3002591F4 /* DappCodeProtocol.swift */,
+				70B1320C243D22D3002591F4 /* DappPOSCodeProtocol.swift */,
+				70B1320D243D22D3002591F4 /* DappRPCodeProtocol.swift */,
+			);
+			path = DappCode;
+			sourceTree = "<group>";
+		};
+		70B13211243D22E0002591F4 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				70B13212243D22EE002591F4 /* DappError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		70B13214243D235B002591F4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				70B13215243D2383002591F4 /* DappApiProtocol.swift */,
+				70B13216243D2383002591F4 /* DappHttpClient.swift */,
+				70B13217243D2383002591F4 /* DappWSClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		70B1321B243D239D002591F4 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				70B1321E243D23B5002591F4 /* DappLoadingView.swift */,
+				70B1321C243D23B5002591F4 /* DappScannerView.swift */,
+				70B1321D243D23B5002591F4 /* DappScannerViewController.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		70B1323A243D240C002591F4 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				70B13239243D23E0002591F4 /* Info.plist */,
+				70B1323E243D2451002591F4 /* DappApiCustomer.swift */,
+				70B1323B243D2451002591F4 /* DappCard.swift */,
+				70B1323C243D2451002591F4 /* DappCode.swift */,
+				70B1323D243D2451002591F4 /* DappEncryption.swift */,
+				70CBF7D1243E412D0048EF61 /* Resources */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		70B13243243D253A002591F4 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				70B1325B243D2546002591F4 /* Info.plist */,
+				70B1325C243D2597002591F4 /* DappApiVendor.swift */,
+				70B1325E243D25D3002591F4 /* DappPOSCode */,
+				70B13263243D2610002591F4 /* DappRPCode */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		70B1325E243D25D3002591F4 /* DappPOSCode */ = {
+			isa = PBXGroup;
+			children = (
+				70B13260243D25E9002591F4 /* DappPOSCode.swift */,
+				70B1325F243D25E9002591F4 /* DappPOSCodeHelper.swift */,
+			);
+			path = DappPOSCode;
+			sourceTree = "<group>";
+		};
+		70B13263243D2610002591F4 /* DappRPCode */ = {
+			isa = PBXGroup;
+			children = (
+				70B13264243D262C002591F4 /* DappRPCodeScannerViewController.swift */,
+				70B13265243D262C002591F4 /* DappRPCode.swift */,
+			);
+			path = DappRPCode;
+			sourceTree = "<group>";
+		};
+		70B13269243D2654002591F4 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				70B13281243D2751002591F4 /* Info.plist */,
+				70B13282243D28B8002591F4 /* DappApiWallet.swift */,
+				70B13283243D28B8002591F4 /* DappUser.swift */,
+				70B13286243D28E7002591F4 /* DappPOSCode */,
+				70B1328B243D292B002591F4 /* DappRPCode */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		70B13286243D28E7002591F4 /* DappPOSCode */ = {
+			isa = PBXGroup;
+			children = (
+				70B13287243D290C002591F4 /* DappPOSCode.swift */,
+				70B13288243D290C002591F4 /* DappPOSCodeScannerController.swift */,
+			);
+			path = DappPOSCode;
+			sourceTree = "<group>";
+		};
+		70B1328B243D292B002591F4 /* DappRPCode */ = {
+			isa = PBXGroup;
+			children = (
+				70B1328C243D2948002591F4 /* DappRPCode.swift */,
+				70B1328D243D2948002591F4 /* DappRPCodeHelper.swift */,
+			);
+			path = DappRPCode;
+			sourceTree = "<group>";
+		};
+		70CBF7D1243E412D0048EF61 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				70CBF7D2243E413C0048EF61 /* dapp_prod.pem */,
+				70CBF7D3243E413C0048EF61 /* dapp_sandbox.pem */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		70B131E8243D2149002591F4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70B131F2243D2149002591F4 /* DappMX.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B131F9243D218B002591F4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70B131FA243D218B002591F4 /* DappMX.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B13223243D23E0002591F4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70B13224243D23E0002591F4 /* DappMX.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B13245243D2546002591F4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70B13246243D2546002591F4 /* DappMX.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B1326B243D2701002591F4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70B1326C243D2701002591F4 /* DappMX.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		70B131EC243D2149002591F4 /* DappMX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70B131F5243D2149002591F4 /* Build configuration list for PBXNativeTarget "DappMX" */;
+			buildPhases = (
+				70B131E8243D2149002591F4 /* Headers */,
+				70B131E9243D2149002591F4 /* Sources */,
+				70B131EA243D2149002591F4 /* Frameworks */,
+				70B131EB243D2149002591F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DappMX;
+			productName = DappMX;
+			productReference = 70B131ED243D2149002591F4 /* DappMX.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		70B131F8243D218B002591F4 /* DappCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70B131FE243D218B002591F4 /* Build configuration list for PBXNativeTarget "DappCore" */;
+			buildPhases = (
+				70B131F9243D218B002591F4 /* Headers */,
+				70B131FB243D218B002591F4 /* Sources */,
+				70B131FC243D218B002591F4 /* Frameworks */,
+				70B131FD243D218B002591F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DappCore;
+			productName = DappMX;
+			productReference = 70B13201243D218B002591F4 /* DappCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		70B13222243D23E0002591F4 /* DappCustomer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70B13235243D23E0002591F4 /* Build configuration list for PBXNativeTarget "DappCustomer" */;
+			buildPhases = (
+				70B13223243D23E0002591F4 /* Headers */,
+				70B13225243D23E0002591F4 /* Sources */,
+				70B13233243D23E0002591F4 /* Frameworks */,
+				70B13234243D23E0002591F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DappCustomer;
+			productName = DappMX;
+			productReference = 70B13238243D23E0002591F4 /* DappCustomer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		70B13244243D2546002591F4 /* DappVendor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70B13257243D2546002591F4 /* Build configuration list for PBXNativeTarget "DappVendor" */;
+			buildPhases = (
+				70B13245243D2546002591F4 /* Headers */,
+				70B13247243D2546002591F4 /* Sources */,
+				70B13255243D2546002591F4 /* Frameworks */,
+				70B13256243D2546002591F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DappVendor;
+			productName = DappMX;
+			productReference = 70B1325A243D2546002591F4 /* DappVendor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		70B1326A243D2701002591F4 /* DappWallet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70B1327D243D2701002591F4 /* Build configuration list for PBXNativeTarget "DappWallet" */;
+			buildPhases = (
+				70B1326B243D2701002591F4 /* Headers */,
+				70B1326D243D2701002591F4 /* Sources */,
+				70B1327B243D2701002591F4 /* Frameworks */,
+				70B1327C243D2701002591F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DappWallet;
+			productName = DappMX;
+			productReference = 70B13280243D2701002591F4 /* DappWallet.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70B131E4243D2149002591F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = Dapp;
+				TargetAttributes = {
+					70B131EC243D2149002591F4 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					70B131F8243D218B002591F4 = {
+						LastSwiftMigration = 1100;
+					};
+				};
+			};
+			buildConfigurationList = 70B131E7243D2149002591F4 /* Build configuration list for PBXProject "DappMX" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 70B131E3243D2149002591F4;
+			productRefGroup = 70B131EE243D2149002591F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70B131EC243D2149002591F4 /* DappMX */,
+				70B131F8243D218B002591F4 /* DappCore */,
+				70B13222243D23E0002591F4 /* DappCustomer */,
+				70B13244243D2546002591F4 /* DappVendor */,
+				70B1326A243D2701002591F4 /* DappWallet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70B131EB243D2149002591F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B131FD243D218B002591F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B13234243D23E0002591F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70CBF7D4243E413C0048EF61 /* dapp_prod.pem in Resources */,
+				70CBF7D5243E413C0048EF61 /* dapp_sandbox.pem in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B13256243D2546002591F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B1327C243D2701002591F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70B131E9243D2149002591F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B131FB243D218B002591F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70B13213243D22EE002591F4 /* DappError.swift in Sources */,
+				70B13219243D2383002591F4 /* DappHttpClient.swift in Sources */,
+				70B13218243D2383002591F4 /* DappApiProtocol.swift in Sources */,
+				70B1321F243D23B5002591F4 /* DappScannerView.swift in Sources */,
+				70B13220243D23B5002591F4 /* DappScannerViewController.swift in Sources */,
+				70B1320F243D22D3002591F4 /* DappPOSCodeProtocol.swift in Sources */,
+				70B13207243D2215002591F4 /* Dapp.swift in Sources */,
+				70B1321A243D2383002591F4 /* DappWSClient.swift in Sources */,
+				70B13221243D23B5002591F4 /* DappLoadingView.swift in Sources */,
+				70B1320E243D22D3002591F4 /* DappCodeProtocol.swift in Sources */,
+				70B13208243D2215002591F4 /* DappPayment.swift in Sources */,
+				70B13209243D2215002591F4 /* DictionaryExt.swift in Sources */,
+				70B13210243D22D3002591F4 /* DappRPCodeProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B13225243D23E0002591F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70B13226243D23E0002591F4 /* DappError.swift in Sources */,
+				70B13227243D23E0002591F4 /* DappHttpClient.swift in Sources */,
+				70B13228243D23E0002591F4 /* DappApiProtocol.swift in Sources */,
+				70B13229243D23E0002591F4 /* DappScannerView.swift in Sources */,
+				70B1322A243D23E0002591F4 /* DappScannerViewController.swift in Sources */,
+				70B1322B243D23E0002591F4 /* DappPOSCodeProtocol.swift in Sources */,
+				70B1322C243D23E0002591F4 /* Dapp.swift in Sources */,
+				70B13242243D2451002591F4 /* DappApiCustomer.swift in Sources */,
+				70B1322D243D23E0002591F4 /* DappWSClient.swift in Sources */,
+				70B13240243D2451002591F4 /* DappCode.swift in Sources */,
+				70B1322E243D23E0002591F4 /* DappLoadingView.swift in Sources */,
+				70B1322F243D23E0002591F4 /* DappCodeProtocol.swift in Sources */,
+				70B1323F243D2451002591F4 /* DappCard.swift in Sources */,
+				70B13230243D23E0002591F4 /* DappPayment.swift in Sources */,
+				70B13231243D23E0002591F4 /* DictionaryExt.swift in Sources */,
+				70B13232243D23E0002591F4 /* DappRPCodeProtocol.swift in Sources */,
+				70B13241243D2451002591F4 /* DappEncryption.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B13247243D2546002591F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70B13248243D2546002591F4 /* DappError.swift in Sources */,
+				70B13249243D2546002591F4 /* DappHttpClient.swift in Sources */,
+				70B1324A243D2546002591F4 /* DappApiProtocol.swift in Sources */,
+				70B13261243D25E9002591F4 /* DappPOSCodeHelper.swift in Sources */,
+				70B1324B243D2546002591F4 /* DappScannerView.swift in Sources */,
+				70B1324C243D2546002591F4 /* DappScannerViewController.swift in Sources */,
+				70B13266243D262C002591F4 /* DappRPCodeScannerViewController.swift in Sources */,
+				70B1325D243D2597002591F4 /* DappApiVendor.swift in Sources */,
+				70B1324D243D2546002591F4 /* DappPOSCodeProtocol.swift in Sources */,
+				70B1324E243D2546002591F4 /* Dapp.swift in Sources */,
+				70B1324F243D2546002591F4 /* DappWSClient.swift in Sources */,
+				70B13267243D262C002591F4 /* DappRPCode.swift in Sources */,
+				70B13250243D2546002591F4 /* DappLoadingView.swift in Sources */,
+				70B13251243D2546002591F4 /* DappCodeProtocol.swift in Sources */,
+				70B13252243D2546002591F4 /* DappPayment.swift in Sources */,
+				70B13253243D2546002591F4 /* DictionaryExt.swift in Sources */,
+				70B13262243D25E9002591F4 /* DappPOSCode.swift in Sources */,
+				70B13254243D2546002591F4 /* DappRPCodeProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B1326D243D2701002591F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70B1326E243D2701002591F4 /* DappError.swift in Sources */,
+				70B1326F243D2701002591F4 /* DappHttpClient.swift in Sources */,
+				70B13270243D2701002591F4 /* DappApiProtocol.swift in Sources */,
+				70B13271243D2701002591F4 /* DappScannerView.swift in Sources */,
+				70B13272243D2701002591F4 /* DappScannerViewController.swift in Sources */,
+				70B13284243D28B8002591F4 /* DappApiWallet.swift in Sources */,
+				70B1328F243D2948002591F4 /* DappRPCodeHelper.swift in Sources */,
+				70B13273243D2701002591F4 /* DappPOSCodeProtocol.swift in Sources */,
+				70B13285243D28B8002591F4 /* DappUser.swift in Sources */,
+				70B13274243D2701002591F4 /* Dapp.swift in Sources */,
+				70B13275243D2701002591F4 /* DappWSClient.swift in Sources */,
+				70B13276243D2701002591F4 /* DappLoadingView.swift in Sources */,
+				70B1328E243D2948002591F4 /* DappRPCode.swift in Sources */,
+				70B1328A243D290C002591F4 /* DappPOSCodeScannerController.swift in Sources */,
+				70B13277243D2701002591F4 /* DappCodeProtocol.swift in Sources */,
+				70B13278243D2701002591F4 /* DappPayment.swift in Sources */,
+				70B13279243D2701002591F4 /* DictionaryExt.swift in Sources */,
+				70B13289243D290C002591F4 /* DappPOSCode.swift in Sources */,
+				70B1327A243D2701002591F4 /* DappRPCodeProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		70B131F3243D2149002591F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		70B131F4243D2149002591F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		70B131F6243D2149002591F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 562DJLXCJJ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DappMX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		70B131F7243D2149002591F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 562DJLXCJJ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DappMX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		70B131FF243D218B002591F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 562DJLXCJJ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DappMX/Core/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.core;
+				PRODUCT_NAME = DappCore;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		70B13200243D218B002591F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 562DJLXCJJ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DappMX/Core/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.core;
+				PRODUCT_NAME = DappCore;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		70B13236243D23E0002591F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 562DJLXCJJ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DappMX/Customer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.customer;
+				PRODUCT_NAME = DappCustomer;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		70B13237243D23E0002591F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 562DJLXCJJ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DappMX/Customer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.customer;
+				PRODUCT_NAME = DappCustomer;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		70B13258243D2546002591F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 562DJLXCJJ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DappMX/Vendor/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.vendor;
+				PRODUCT_NAME = DappVendor;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		70B13259243D2546002591F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 562DJLXCJJ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DappMX/Vendor/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.vendor;
+				PRODUCT_NAME = DappVendor;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		70B1327E243D2701002591F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 562DJLXCJJ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/DappMX/Wallet/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.wallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		70B1327F243D2701002591F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 562DJLXCJJ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/DappMX/Wallet/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.wallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70B131E7243D2149002591F4 /* Build configuration list for PBXProject "DappMX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70B131F3243D2149002591F4 /* Debug */,
+				70B131F4243D2149002591F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70B131F5243D2149002591F4 /* Build configuration list for PBXNativeTarget "DappMX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70B131F6243D2149002591F4 /* Debug */,
+				70B131F7243D2149002591F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70B131FE243D218B002591F4 /* Build configuration list for PBXNativeTarget "DappCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70B131FF243D218B002591F4 /* Debug */,
+				70B13200243D218B002591F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70B13235243D23E0002591F4 /* Build configuration list for PBXNativeTarget "DappCustomer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70B13236243D23E0002591F4 /* Debug */,
+				70B13237243D23E0002591F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70B13257243D2546002591F4 /* Build configuration list for PBXNativeTarget "DappVendor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70B13258243D2546002591F4 /* Debug */,
+				70B13259243D2546002591F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70B1327D243D2701002591F4 /* Build configuration list for PBXNativeTarget "DappWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70B1327E243D2701002591F4 /* Debug */,
+				70B1327F243D2701002591F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 70B131E4243D2149002591F4 /* Project object */;
+}
