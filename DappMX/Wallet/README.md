@@ -7,11 +7,11 @@ Este SDK esta pensado para los Wallets electrónicos integrados al ambiente Dapp
 Recomendamos utilizar CocoaPods para integrar Dapp Wallet SDK
 ```ruby
 platform :ios, '11.0'
-pod 'DappWallet'
+pod 'DappWallet', '~> 2.1.0'
 ```
 De forma estándar el SDK monitorea el estado de los códigos QR Request to Pay vía peticiones HTTP.  Existe una versión alternativa que sigue el estado del código QR a través de WebSockets con ayuda de la librería [Starscream](https://github.com/daltoniam/Starscream/). Si deseas utilizar esta versión incluye esta línea en  lugar de la anterior:
 ```ruby
-pod 'DappWallet/Socket'
+pod 'DappWallet/Socket', '~> 2.1.0'
 ```
 ## CONFIGURACIÓN
 1. Agrega la siguiente instrucción de importación: 

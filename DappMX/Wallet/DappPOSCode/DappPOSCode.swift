@@ -19,6 +19,7 @@ public class DappPOSCode: DappCodeProtocol {
     public var amount: Double!
     public var description: String!
     public var reference: String?
+    public var currency: String!
     public var user: DappUser?
     public var json = [String: Any]()
     
@@ -85,6 +86,9 @@ public class DappPOSCode: DappCodeProtocol {
             guard let d = data else {
                 onCompletion(.responseError(message: nil))
                 return
+            }
+            if let currency = d["currency"] as? String {
+                code.currency = currency
             }
             if let description = d["description"] as? String {
                 code.description = description
