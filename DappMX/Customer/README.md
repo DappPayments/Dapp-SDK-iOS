@@ -8,7 +8,7 @@ Este SDK esta pensado para las aplicaciones de negocios con ventas no presencial
 Recomendamos utilizar CocoaPods para integrar Dapp Customer SDK
 ```
 platform :ios, '11.0'
-pod 'DappCustomer'
+pod 'DappCustomer', '~> 2.1.0'
 ```
 ## CONFIGURACIÓN
 1. Agrega la siguiente instrucción de importación: 

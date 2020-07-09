@@ -18,9 +18,10 @@ Este SDK esta pensado para las aplicaciones de negocios con ventas presenciales.
 - Generar y monitorear el estado de códigos Dapp QR POS.
 
 ## [Dapp Wallet SDK for iOS](DappMX/Wallet)
-Este SDK esta pensado para los Wallets electrónicos integrados al ambiente Dapp. Cuenta con dos funciones principales:
+Este SDK esta pensado para los Wallets electrónicos integrados al ambiente Dapp. Cuenta con tres funciones principales:
 - Leer códigos QR POS integrados al ambiente Dapp.
 - Monitorear el estado y renovar códigos Dapp QR Request to Pay.
+- Tokenizar tarjetas.
 
 ## LICENCIA
 [MIT](LICENSE.txt)

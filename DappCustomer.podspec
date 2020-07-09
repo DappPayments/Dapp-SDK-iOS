@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "DappCustomer"
-  spec.version      = "2.0.0"
+  spec.version      = "2.1.0"
   spec.summary      = "Dapp is the new payments network in Mexico."
 
   spec.description  = <<-DESC
@@ -18,6 +18,6 @@ DappCustomer has two functionalities:
 			 :tag => "Customer-" + spec.version.to_s }
   spec.source_files  = "DappMX/Core/*.swift", "DappMX/Core/**/*.swift", "DappMX/Customer/*.swift"
   # spec.exclude_files = "DappMX/Core/Info.plist"
-  spec.resources     = "DappMx/Customer/Resources/*.pem"
+  spec.resources     = "DappMX/Core/Resources/*.pem"
   spec.swift_version = "5"
 end

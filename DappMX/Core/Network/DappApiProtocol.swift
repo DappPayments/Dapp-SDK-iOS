@@ -27,6 +27,18 @@ internal extension DappApiProtocol {
         }
         DappHttpClient.request(url: httpURL + path, authHeader: authHeader, params: parameters?.query(), method: method, defaultRc: defaultRc, onCompletion: onCompletion)
     }
+    
+    static func card(_ number: String, cardholder: String, cvv: String, expMonth: String, expYear: String, email: String, phoneNumber: String, onCompletion: @escaping DappHttpResponse) {
+        
+        let paramsDic = ["card_number": number,
+                         "cardholder": cardholder,
+                         "cvv": cvv,
+                         "exp_month": expMonth,
+                         "exp_year": expYear,
+                         "email": email,
+                         "phone_number": phoneNumber]
+        httpRequest(path: "cards/", parameters: paramsDic, onCompletion: onCompletion)
+    }
 }
 
 internal protocol DappPOSApiProtocol: DappApiProtocol { }

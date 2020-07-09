@@ -24,7 +24,8 @@ public class DappCode: DappPOSCodeProtocol {
     private weak var parentVC: UIViewController?
     private var schemeCallback: String?
     private static var walletsInstalled = [String]()
-    private static var wallets = ["dappmxsantander": "Super Pago"]
+    private static var wallets = ["dappmxsantander": "Super Pago",
+                                  "dappmxqrpago": "QR Pago"]
     private static var didDownloadWalletSchemes = false
 
     public required init(amount: Double, description: String, reference: String? = nil) {

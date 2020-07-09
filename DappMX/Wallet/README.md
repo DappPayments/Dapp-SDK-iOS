@@ -2,16 +2,17 @@
 Este SDK esta pensado para los Wallets electrónicos integrados al ambiente Dapp. Cuenta con dos funciones principales:
 - Leer códigos QR POS integrados al ambiente Dapp.
 - Monitorear el estado y renovar códigos Dapp QR Request to Pay.
+- Tokenizar tarjetas.
 
 ## INSTALACIÓN
 Recomendamos utilizar CocoaPods para integrar Dapp Wallet SDK
 ```ruby
 platform :ios, '11.0'
-pod 'DappWallet', '~> 2.1.0'
+pod 'DappWallet', '~> 2.2.0'
 ```
 De forma estándar el SDK monitorea el estado de los códigos QR Request to Pay vía peticiones HTTP.  Existe una versión alternativa que sigue el estado del código QR a través de WebSockets con ayuda de la librería [Starscream](https://github.com/daltoniam/Starscream/). Si deseas utilizar esta versión incluye esta línea en  lugar de la anterior:
 ```ruby
-pod 'DappWallet/Socket', '~> 2.1.0'
+pod 'DappWallet/Socket', '~> 2.2.0'
 ```
 ## CONFIGURACIÓN
 1. Agrega la siguiente instrucción de importación: 
@@ -237,6 +238,39 @@ code.delete()
 6. Deja de recibir notificaciones del estado del código con la función _stopListening_
 ```swift
 code.stopListening()
+```
+## TOKENIZAR TARJETAS
+Tokeniza las tarjetas de tus usuarios, guarda la referencia en tu base de datos y realiza pagos con esa tarjeta cuando lo desee el usuario.
+```swift
+import DappWallet
+
+class ViewController: UIViewController {
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+}
+
+func tokenizeCardButton() {
+    let card: String = "5515150180013278"
+    let name: String = "Daenerys Targaryen"
+    let cvv: String = "123"
+    let month: String = "01"
+    let year: String = "2030"
+    let mail: String = "daenerys@gameofthrones.com"
+    let phone: String = "5512345678"
+    
+    //prepare UI for the async call
+    DappCard.add(card, cardholder: name, cvv: cvv, expMonth: month, expYear: year, email: mail, phoneNumber: phone) { (card, error) in
+    //handle the response results
+        if let c = card {
+        print(c.token!)
+        }
+        else {
+        print(error!.localizedDescription)
+        }
+    }
+}
+
 ```
 ## LICENCIA
 [MIT](../../LICENSE.txt)

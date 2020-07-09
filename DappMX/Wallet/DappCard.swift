@@ -39,7 +39,7 @@ public class DappCard: DappCardProtocol {
             return
         }
         let year2digits = String(expYear.suffix(2))
-        DappApiCustomer.card(DappEncryption.encrypt(cardNumber), cardholder: DappEncryption.encrypt(cardholder), cvv: DappEncryption.encrypt(cvv), expMonth: DappEncryption.encrypt(expMonth), expYear: DappEncryption.encrypt(year2digits), email: DappEncryption.encrypt(email), phoneNumber: DappEncryption.encrypt(phoneNumber)) { (data, error) in
+        DappApiWallet.card(DappEncryption.encrypt(cardNumber), cardholder: DappEncryption.encrypt(cardholder), cvv: DappEncryption.encrypt(cvv), expMonth: DappEncryption.encrypt(expMonth), expYear: DappEncryption.encrypt(year2digits), email: DappEncryption.encrypt(email), phoneNumber: DappEncryption.encrypt(phoneNumber)) { (data, error) in
             if let e = error {
                 onCompletion(nil, e)
                 return
