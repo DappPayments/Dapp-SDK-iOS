@@ -34,6 +34,10 @@ public class DappCode: DappPOSCodeProtocol {
         self.reference = reference
     }
     
+    public init(dappId: String) {
+        self.dappId = dappId
+    }
+    
     public func pay(from viewController: UIViewController) {
         guard let delegate = self.delegate else {
             print("Dapp: DappCodeDelegate is not set")
@@ -51,6 +55,10 @@ public class DappCode: DappPOSCodeProtocol {
         }
         schemeCallback = urlScheme
         parentVC = viewController
+        if let code = dappId {
+            selectWalletForPayment(code: code)
+            return
+        }
         create()
     }
     
@@ -65,22 +73,7 @@ public class DappCode: DappPOSCodeProtocol {
                 return
             }
             self.dappId = shortCode
-            if DappCode.walletsInstalled.count == 1, let scheme = DappCode.walletsInstalled.first {
-                self.goToPayment(scheme: scheme, code: shortCode)
-                return
-            }
-            let alert = UIAlertController(title: "Pagar", message: "Selecciona el wallet con el que deseas pagar", preferredStyle: .actionSheet)
-            for w in DappCode.walletsInstalled {
-                let action = UIAlertAction(title: DappCode.wallets[w], style: .default) { (_) in
-                    self.goToPayment(scheme: w, code: shortCode)
-                }
-                alert.addAction(action)
-            }
-            let cancel = UIAlertAction(title: "Cancelar", style: .cancel) { (_) in
-                self.delegate?.dappCode(self, didFailWithError: .userCancelled)
-            }
-            alert.addAction(cancel)
-            self.parentVC?.present(alert, animated: true)
+            self.selectWalletForPayment(code: shortCode)
         }
     }
     
@@ -99,6 +92,25 @@ public class DappCode: DappPOSCodeProtocol {
             }
         }
         return !walletsInstalled.isEmpty
+    }
+    
+    private func selectWalletForPayment(code: String) {
+        if DappCode.walletsInstalled.count == 1, let scheme = DappCode.walletsInstalled.first {
+            self.goToPayment(scheme: scheme, code: code)
+            return
+        }
+        let alert = UIAlertController(title: "Pagar", message: "Selecciona el wallet con el que deseas pagar", preferredStyle: .actionSheet)
+        for w in DappCode.walletsInstalled {
+            let action = UIAlertAction(title: DappCode.wallets[w], style: .default) { (_) in
+                self.goToPayment(scheme: w, code: code)
+            }
+            alert.addAction(action)
+        }
+        let cancel = UIAlertAction(title: "Cancelar", style: .cancel) { (_) in
+            self.delegate?.dappCode(self, didFailWithError: .userCancelled)
+        }
+        alert.addAction(cancel)
+        self.parentVC?.present(alert, animated: true)
     }
     
     private func goToPayment(scheme: String, code: String) {
