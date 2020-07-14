@@ -170,7 +170,19 @@ scannerView.qrScannedFailed()
 ## REALIZAR PAGOS A CODIGOS POS
 Puedes recibir solicitudes de pago de cualquier app de negocio integrado al ambiente Dapp que el usuario tenga instalado en su dispositivo.
 
-1. Agrega el metodo **application(\_:open:options)** en el **AppDelegate**. Crea un objeto _DappPOSCode_ con el parametro url del método.
+1. Configurar el archivo **info.plist**. Haz clic con el botón derecho en el archivo info.plist y elige **Open As Source Code**. Copia y pega el siguiente fragmento de código XML en el cuerpo de tu archivo. Cambia el valor de _[APP_ID]_  con el identificador de tu app.
+```xml    
+<key>CFBundleURLTypes</key>
+<array>
+    <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+            <string>dapp[APP_ID]</string>
+        </array>
+    </dict>
+</array>
+```
+2. Agrega el metodo **application(\_:open:options)** en el **AppDelegate**. Crea un objeto _DappPOSCode_ con el parametro url del método.
 ```swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
     if Dapp.application(app, open: url, options: options) {
@@ -179,7 +191,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpe
     return true
 }
 ```
-2. Una vez que hayas realizado la transacción desde tu servidor, notifica a la aplicación del negocio con la función **returnPayment(paymentId:)**
+3. Una vez que hayas realizado la transacción desde tu servidor, notifica a la aplicación del negocio con la función **returnPayment(paymentId:)**
 ```swift
 let paymentIdFromServer: String = "dcd7dc9c-e955-4668-ba21-45b0a6c48e72"
 code.returnPayment(paymentId: paymentIdFromServer)
