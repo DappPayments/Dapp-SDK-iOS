@@ -73,6 +73,32 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
         helper.stopListening()
     }
     
+    public func sendPushNotification(to phone: String, success: @escaping (Bool, DappError?) -> () ) {
+        guard let code = dappId else {
+            success(false, .pushNotificationInvalidCode)
+            return
+        }
+        if phone.count != 10 || Int(phone) == nil {
+            success(false, .invalidPhoneNumber)
+            return
+        }
+        DappApiVendor.dappCodeCodiPush(code, phone: phone) { (data, error) in
+            if let e = error {
+                success(false, e)
+                return
+            }
+            guard let json = data, let rc = json["rc"] as? Int else {
+                success(false, .responseError(message: nil))
+                return
+            }
+            if rc != 0 {
+                success(false, .responseError(message: json["msg"] as? String))
+                return
+            }
+            success(true, nil)
+        }
+    }
+    
     private func generateQR(for code: String, width: CGFloat, height: CGFloat) -> UIImage {
         let filter = CIFilter(name: "CIQRCodeGenerator")!
         filter.setDefaults()

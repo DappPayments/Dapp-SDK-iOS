@@ -36,6 +36,7 @@ public enum DappError: Error {
     case noWalletAvailable //customer
     case invalidURLScheme //customer
     case invalidDappPOSCode //wallet
+    case pushNotificationInvalidCode
     
     public var localizedDescription: String {
         switch self {
@@ -87,7 +88,8 @@ public enum DappError: Error {
             return "DappError: App has not configured URLSchemes correctly on info.plist."
         case .invalidDappPOSCode:
             return "DappError: QR is not a valid DappPOSCode."
+        case .pushNotificationInvalidCode:
+            return "DappError: Code must be created before sending push notification"
         }
     }
 }
-

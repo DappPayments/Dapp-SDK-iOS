@@ -980,7 +980,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.vendor;
 				PRODUCT_NAME = DappVendor;
 				SKIP_INSTALL = YES;
@@ -1009,7 +1009,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.vendor;
 				PRODUCT_NAME = DappVendor;
 				SKIP_INSTALL = YES;

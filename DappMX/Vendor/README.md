@@ -66,6 +66,19 @@ code.createWithImage(size: CGSize(width: 200, height: 200))
 ```swift
 code.listen()
 ```
+### Envía códigos por push notifications
+En caso de que el comercio tenga habilitado cobros CoDi, una vez que el código QR ha sido creado, puede enviarlo a la aplicación CoDi del usuario a través de una push notification con la siguiente función.
+```swift
+code.sendPushNotification(to: "4421234567") { (success, error) in
+    if success {
+    //handle success
+    }
+    else if let e = error {
+    //handle error
+    print(e.localizedDescription)
+    }
+}
+```
 ## CÓDIGOS QR REQUEST TO PAY
 Los códigos QR RP, son códigos generados por usuarios, diseñados para dar permiso al negocio lector de realizar un cobro a su cuenta.
 
