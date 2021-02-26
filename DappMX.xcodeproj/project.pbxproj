@@ -89,6 +89,7 @@
 		70B1328F243D2948002591F4 /* DappRPCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1328D243D2948002591F4 /* DappRPCodeHelper.swift */; };
 		70CBF7D4243E413C0048EF61 /* dapp_prod.pem in Resources */ = {isa = PBXBuildFile; fileRef = 70CBF7D2243E413C0048EF61 /* dapp_prod.pem */; };
 		70CBF7D5243E413C0048EF61 /* dapp_sandbox.pem in Resources */ = {isa = PBXBuildFile; fileRef = 70CBF7D3243E413C0048EF61 /* dapp_sandbox.pem */; };
+		70FC39D925E984C8001FD982 /* DappWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FC39D825E984C8001FD982 /* DappWallet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +136,7 @@
 		70B1328D243D2948002591F4 /* DappRPCodeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappRPCodeHelper.swift; sourceTree = "<group>"; };
 		70CBF7D2243E413C0048EF61 /* dapp_prod.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dapp_prod.pem; sourceTree = "<group>"; };
 		70CBF7D3243E413C0048EF61 /* dapp_sandbox.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dapp_sandbox.pem; sourceTree = "<group>"; };
+		70FC39D825E984C8001FD982 /* DappWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DappWallet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +283,7 @@
 			children = (
 				70B1325B243D2546002591F4 /* Info.plist */,
 				70B1325C243D2597002591F4 /* DappApiVendor.swift */,
+				70FC39D825E984C8001FD982 /* DappWallet.swift */,
 				70B1325E243D25D3002591F4 /* DappPOSCode */,
 				70B13263243D2610002591F4 /* DappRPCode */,
 			);
@@ -637,6 +640,7 @@
 				70B13250243D2546002591F4 /* DappLoadingView.swift in Sources */,
 				70B13251243D2546002591F4 /* DappCodeProtocol.swift in Sources */,
 				70B13252243D2546002591F4 /* DappPayment.swift in Sources */,
+				70FC39D925E984C8001FD982 /* DappWallet.swift in Sources */,
 				70B13253243D2546002591F4 /* DictionaryExt.swift in Sources */,
 				70B13262243D25E9002591F4 /* DappPOSCode.swift in Sources */,
 				70B13254243D2546002591F4 /* DappRPCodeProtocol.swift in Sources */,
@@ -967,6 +971,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 562DJLXCJJ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -980,7 +985,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.0;
+				MARKETING_VERSION = 2.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.vendor;
 				PRODUCT_NAME = DappVendor;
 				SKIP_INSTALL = YES;
@@ -996,6 +1001,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 562DJLXCJJ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1009,7 +1015,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.0;
+				MARKETING_VERSION = 2.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.vendor;
 				PRODUCT_NAME = DappVendor;
 				SKIP_INSTALL = YES;

@@ -73,7 +73,36 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
         helper.stopListening()
     }
     
-    public func sendPushNotification(to phone: String, success: @escaping (Bool, DappError?) -> () ) {
+    public static func getPushNotificationDestinations(_ onCompletion: @escaping ([DappWallet]?, DappError?) -> ()) {
+        DappApiVendor.dappCodePushDestinations { (data, error) in
+            if let e = error {
+                onCompletion(nil, e)
+                return
+            }
+            guard let json = data, let rc = json["rc"] as? Int else {
+                onCompletion(nil, .responseError(message: nil))
+                return
+            }
+            if rc != 0 {
+                onCompletion(nil, .responseError(message: json["msg"] as? String))
+                return
+            }
+            
+            guard let walletsArray = json["data"] as? [[String: String]] else {
+                onCompletion(nil, .responseError(message: nil))
+                return
+            }
+            var wallets = [DappWallet]()
+            for json in walletsArray {
+                if let name = json["name"], let id = json["id"] {
+                    wallets.append(DappWallet(id: id, name: name))
+                }
+            }
+            onCompletion(wallets, nil)
+        }
+    }
+    
+    public func sendCoDiPushNotification(to phone: String, success: @escaping (Bool, DappError?) -> () ) {
         guard let code = dappId else {
             success(false, .pushNotificationInvalidCode)
             return
@@ -83,6 +112,32 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
             return
         }
         DappApiVendor.dappCodeCodiPush(code, phone: phone) { (data, error) in
+            if let e = error {
+                success(false, e)
+                return
+            }
+            guard let json = data, let rc = json["rc"] as? Int else {
+                success(false, .responseError(message: nil))
+                return
+            }
+            if rc != 0 {
+                success(false, .responseError(message: json["msg"] as? String))
+                return
+            }
+            success(true, nil)
+        }
+    }
+    
+    public func sendPushNotification(to wallet: DappWallet, phone: String, success: @escaping (Bool, DappError?) -> () ) {
+        guard let code = dappId else {
+            success(false, .pushNotificationInvalidCode)
+            return
+        }
+        if phone.count != 10 || Int(phone) == nil {
+            success(false, .invalidPhoneNumber)
+            return
+        }
+        DappApiVendor.dappCodePush(code, phone: phone, destination: wallet.id) { (data, error) in
             if let e = error {
                 success(false, e)
                 return

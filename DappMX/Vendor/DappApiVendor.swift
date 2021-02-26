@@ -33,6 +33,16 @@ internal class DappApiVendor: DappPOSApiProtocol {
         httpRequest(path: "dapp-codes/\(code)/codi/push/", parameters: params, defaultRc: false, onCompletion: onCompletion)
     }
     
+    static func dappCodePush(_ code: String, phone: String, destination: String, onCompletion: @escaping DappHttpResponse) {
+        let params = ["phone": phone,
+                      "destination": destination]
+        httpRequest(path: "dapp-codes/\(code)/push/", parameters: params, defaultRc: false, onCompletion: onCompletion)
+    }
+    
+    static func dappCodePushDestinations(_ onCompletion: @escaping DappHttpResponse) {
+        httpRequest(path: "dapp-codes/push/destinations/", defaultRc: false, onCompletion: onCompletion)
+    }
+    
     static func dappCodePayment(_ code: String, onCompletion: @escaping DappHttpResponse) {
         httpRequest(path: "dapp-codes/\(code)/payment/", onCompletion: onCompletion)
     }
