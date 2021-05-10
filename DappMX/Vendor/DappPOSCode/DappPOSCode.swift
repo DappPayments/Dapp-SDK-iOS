@@ -21,6 +21,7 @@ public enum DappPOSCodeStatus {
 public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
     
     public var dappId: String?
+    public var qrText: String?
     public var amount: Double!
     public var description: String!
     public var reference: String?
@@ -50,16 +51,17 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
                 self.delegate?.dappCode(self, didChangeStatus: .error(e))
                 return
             }
-            guard let sc = data?["short_code"] as? String else {
+            guard let sc = data?["short_code"] as? String, let qrStr = data?["qr_str"] as? String else {
                 self.delegate?.dappCode(self, didChangeStatus: .error(.responseError(message: nil)))
                 return
             }
             self.dappId = sc
+            self.qrText = qrStr
             var image: UIImage?
             if let size = self.qrSize {
-                image = self.generateQR(for: sc, width: size.width, height: size.height)
+                image = self.generateQR(for: qrStr, width: size.width, height: size.height)
             }
-            self.delegate?.dappCode(self, didChangeStatus: .created(sc, image))
+            self.delegate?.dappCode(self, didChangeStatus: .created(qrStr, image))
         }
     }
     
@@ -157,7 +159,7 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
     private func generateQR(for code: String, width: CGFloat, height: CGFloat) -> UIImage {
         let filter = CIFilter(name: "CIQRCodeGenerator")!
         filter.setDefaults()
-        filter.setValue("https://dapp.mx/c/\(code)".data(using: .utf8, allowLossyConversion: false), forKey: "inputMessage")
+        filter.setValue(code.data(using: .utf8, allowLossyConversion: false), forKey: "inputMessage")
         let outputImage = filter.outputImage!
         let scaleX = width / outputImage.extent.size.width
         let scaleY = height / outputImage.extent.size.height
