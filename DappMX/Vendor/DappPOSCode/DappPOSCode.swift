@@ -25,8 +25,10 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
     public var amount: Double!
     public var description: String!
     public var reference: String?
+    public var urlImage: URL!
     public weak var delegate: DappPOSCodeDelegate?
     
+    private var expirationMinutes: Int?
     private var qrSize: CGSize?
     private var helper: DappPOSCodeHelper = DappPOSCodeHelper()
     
@@ -34,6 +36,11 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
         self.amount = amount
         self.description = description
         self.reference = reference
+    }
+    
+    public convenience init(amount: Double, description: String, reference: String? = nil, expirationMinutes: Int? = nil) {
+        self.init(amount: amount, description: description, reference: reference)
+        self.expirationMinutes = expirationMinutes
     }
     
     public func createWithImage(size: CGSize) {
@@ -46,17 +53,19 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
             print("Dapp: DappPOSCode has already been created before.")
             return
         }
-        DappApiVendor.dappCode(amount: amount, description: description, reference: reference) { (data, error) in
+        DappApiVendor.dappCode(amount: amount, description: description, reference: reference, expirationMintues: expirationMinutes) {
+            (data, error) in
             if let e = error {
                 self.delegate?.dappCode(self, didChangeStatus: .error(e))
                 return
             }
-            guard let sc = data?["short_code"] as? String, let qrStr = data?["qr_str"] as? String else {
+            guard let sc = data?["short_code"] as? String, let qrStr = data?["qr_str"] as? String, let qrImg = data?["qr_image"] as? String, let urlImage = URL(string: qrImg) else {
                 self.delegate?.dappCode(self, didChangeStatus: .error(.responseError(message: nil)))
                 return
             }
             self.dappId = sc
             self.qrText = qrStr
+            self.urlImage = urlImage
             var image: UIImage?
             if let size = self.qrSize {
                 image = self.generateQR(for: qrStr, width: size.width, height: size.height)
@@ -90,13 +99,13 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
                 return
             }
             
-            guard let walletsArray = json["data"] as? [[String: String]] else {
+            guard let walletsArray = json["data"] as? [[String: String?]] else {
                 onCompletion(nil, .responseError(message: nil))
                 return
             }
             var wallets = [DappWallet]()
             for json in walletsArray {
-                if let name = json["name"], let id = json["id"] {
+                if let name = json["name"] as? String, let id = json["id"] as? String {
                     wallets.append(DappWallet(id: id, name: name))
                 }
             }
