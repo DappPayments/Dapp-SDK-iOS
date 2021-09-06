@@ -1,8 +1,5 @@
 # Dapp Wallet SDK for iOS
-Este SDK esta pensado para los Wallets electrónicos integrados al ambiente Dapp. Cuenta con dos funciones principales:
-- Leer códigos QR POS integrados al ambiente Dapp.
-- Monitorear el estado y renovar códigos Dapp QR Request to Pay.
-- Tokenizar tarjetas.
+Este SDK esta pensado para los Wallets electrónicos integrados al ambiente Dapp. Su función principal es leer códigos QR POS integrados al ambiente Dapp.
 
 ## INSTALACIÓN
 Recomendamos utilizar CocoaPods para integrar Dapp Wallet SDK
@@ -195,94 +192,6 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpe
 ```swift
 let paymentIdFromServer: String = "dcd7dc9c-e955-4668-ba21-45b0a6c48e72"
 code.returnPayment(paymentId: paymentIdFromServer)
-```
-## CÓDIGOS QR REQUEST TO PAY
-Los códigos QR RP, son códigos generados por usuarios, diseñados para dar permiso al negocio lector de realizar un cobro a su cuenta.
-
-Un código QR RP solo se puede crear desde el servidor del wallet. Las funciones incluídas dentro de este SDK son renovar, eliminar y monitorear en caso de que se haya realizado un cobro.
-
- 1. Adopta el protocolo **DappRPCodeDelegate** e implementa los métodos para recibir el estatus del código QR.
-```swift
-import DappWallet
-
-class ViewController: UIViewController, DappRPCodeDelegate {
-
-    //MARK: - DappRPCodeDelegate
-    func dappRPCode(_ dappRPCode: DappRPCode, didChangeStatus status: DappRequestToPayCodeStatus) {
-        //handle results...
-        switch status {
-        case .needsToBeRenewed:
-            break
-        case .renewed:
-            break
-        case .deleted:
-            break
-        case .payed(let payment):
-            break
-        case .expired:
-            break
-        case .error(let error):
-            break
-        }
-    }
-```
-2. Crea un objeto _DappRPCode_ y asignale un delegado
-```swift
-   var code: DappRPCode!
-    
-    func generateRPCodeWithDataFromYourServer(id: String, readDate: Date, renewDate: Date) {
-        code = DappRPCode(id: id, readExpiration: readDate, renewExpiration: renewDate)
-        code.delegate = self
-    }
-```
-3. Empieza a monitorear el estado del código con la función _listen_
-```swift
-code.listen()
-```
-4. Renueva el código con la función _renew_
-```swift
-code.renew()
-```
-5. Elimina el código con la función _delete_
-```swift
-code.delete()
-```
-6. Deja de recibir notificaciones del estado del código con la función _stopListening_
-```swift
-code.stopListening()
-```
-## TOKENIZAR TARJETAS
-Tokeniza las tarjetas de tus usuarios, guarda la referencia en tu base de datos y realiza pagos con esa tarjeta cuando lo desee el usuario.
-```swift
-import DappWallet
-
-class ViewController: UIViewController {
-
-override func viewDidLoad() {
-    super.viewDidLoad()
-}
-
-func tokenizeCardButton() {
-    let card: String = "5515150180013278"
-    let name: String = "Daenerys Targaryen"
-    let cvv: String = "123"
-    let month: String = "01"
-    let year: String = "2030"
-    let mail: String = "daenerys@gameofthrones.com"
-    let phone: String = "5512345678"
-    
-    //prepare UI for the async call
-    DappCard.add(card, cardholder: name, cvv: cvv, expMonth: month, expYear: year, email: mail, phoneNumber: phone) { (card, error) in
-    //handle the response results
-        if let c = card {
-        print(c.token!)
-        }
-        else {
-        print(error!.localizedDescription)
-        }
-    }
-}
-
 ```
 ## LICENCIA
 [MIT](../../LICENSE.txt)
