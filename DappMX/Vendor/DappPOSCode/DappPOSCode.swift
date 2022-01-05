@@ -29,6 +29,7 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
     public weak var delegate: DappPOSCodeDelegate?
     
     private var expirationMinutes: Int?
+    private var qrSource: Int?
     private var qrSize: CGSize?
     private var helper: DappPOSCodeHelper = DappPOSCodeHelper()
     
@@ -38,9 +39,10 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
         self.reference = reference
     }
     
-    public convenience init(amount: Double, description: String, reference: String? = nil, expirationMinutes: Int? = nil) {
+    public convenience init(amount: Double, description: String, reference: String? = nil, expirationMinutes: Int? = nil, wallet: DappWallet? = nil) {
         self.init(amount: amount, description: description, reference: reference)
         self.expirationMinutes = expirationMinutes
+        self.qrSource = wallet?.qrSource
     }
     
     public func createWithImage(size: CGSize) {
@@ -53,7 +55,7 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
             print("Dapp: DappPOSCode has already been created before.")
             return
         }
-        DappApiVendor.dappCode(amount: amount, description: description, reference: reference, expirationMintues: expirationMinutes) {
+        DappApiVendor.dappCode(amount: amount, description: description, reference: reference, expirationMintues: expirationMinutes, qrSource: qrSource) {
             (data, error) in
             if let e = error {
                 self.delegate?.dappCode(self, didChangeStatus: .error(e))
