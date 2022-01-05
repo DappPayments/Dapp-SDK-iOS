@@ -51,11 +51,11 @@ class ViewController: UIViewController, DappPOSCodeDelegate {
 ```swift
 var wallets = [DappWallet]()
 func getDappCodeWallets() {
-    DappPOSCode.getWallets { (walletsResponse, error) in
-        if let wallets = walletsResponse {
-            self.wallets = wallets
-        }
-    }
+	DappPOSCode.getWallets { (walletsResponse, error) in
+		if let wallets = walletsResponse {
+			self.wallets = wallets
+		}
+	}
 }
 ```
 3. Una vez seleccionado el wallet, inicializa un objeto DappPOSCode y asignale un delegado
@@ -233,6 +233,18 @@ scannerView.isScanning()
 6. Notifica al scanner en caso de que el código escaneado es inválido con la función _qrScannedFailed_
 ```swift
 scannerView.qrScannedFailed()
+```
+## Obten información de pagos
+Puedes obtener los pagos recibidos dentro de un rango de fechas consultando la siguiente función:
+```swift
+DappPayment.getPayments(startDate: startDate, endDate: endDate) { payments, error in
+            guard let paymentsArray = payments else {
+                //handle error
+                return
+            }
+            //handle payments
+            print(paymentsArray.count)
+        }
 ```
 ## LICENCIA
 [MIT](../../LICENSE.txt)
