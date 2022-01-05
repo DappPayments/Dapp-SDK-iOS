@@ -12,11 +12,17 @@ public class DappWallet {
     
     internal var id: String
     
+    internal var qrSource: Int
+    
     public var name: String
+    
+    public var pushNotifications: Bool
         
-    internal init(id: String, name: String) {
+    internal init(id: String, name: String, qrSource: Int, pushNotifications: Bool) {
         self.id = id
         self.name = name
+        self.qrSource = qrSource
+        self.pushNotifications = pushNotifications
     }
     
 }

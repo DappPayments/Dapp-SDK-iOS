@@ -50,4 +50,8 @@ internal class DappApiVendor: DappPOSApiProtocol {
     static func dappCodeSocket(_ code: String) -> DappWSClient {
         return DappWSClient(url: socketURL + "dapp-code/\(code)")
     }
+    
+    static func dappCodeWallets(onCompletion: @escaping DappHttpResponse) {
+        httpRequest(path: "dapp-codes/wallets/", method: "GET", defaultRc: false, onCompletion: onCompletion)
+    }
 }

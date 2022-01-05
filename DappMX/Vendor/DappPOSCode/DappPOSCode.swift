@@ -84,6 +84,35 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
         helper.stopListening()
     }
     
+    public static func getWallets(_ onCompletion: @escaping ([DappWallet]?, DappError?) -> ()) {
+        DappApiVendor.dappCodeWallets { (data, error) in
+            if let e = error {
+                onCompletion(nil, e)
+                return
+            }
+            guard let json = data, let rc = json["rc"] as? Int else {
+                onCompletion(nil, .responseError(message: nil))
+                return
+            }
+            if rc != 0 {
+                onCompletion(nil, .responseError(message: json["msg"] as? String))
+                return
+            }
+            
+            guard let walletsArray = json["data"] as? [[String: Any?]] else {
+                onCompletion(nil, .responseError(message: nil))
+                return
+            }
+            var wallets = [DappWallet]()
+            for json in walletsArray {
+                if let name = json["name"] as? String, let id = json["id"] as? String, let qrSource = json["qr"] as? Int, let pushNotifications = json["push_notification"] as? Bool {
+                    wallets.append(DappWallet(id: id, name: name, qrSource: qrSource, pushNotifications: pushNotifications))
+                }
+            }
+            onCompletion(wallets, nil)
+        }
+    }
+    
     public static func getPushNotificationDestinations(_ onCompletion: @escaping ([DappWallet]?, DappError?) -> ()) {
         DappApiVendor.dappCodePushDestinations { (data, error) in
             if let e = error {
@@ -106,7 +135,7 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
             var wallets = [DappWallet]()
             for json in walletsArray {
                 if let name = json["name"] as? String, let id = json["id"] as? String {
-                    wallets.append(DappWallet(id: id, name: name))
+                    wallets.append(DappWallet(id: id, name: name, qrSource: 1, pushNotifications: true))
                 }
             }
             onCompletion(wallets, nil)
