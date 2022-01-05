@@ -47,7 +47,9 @@ internal class DappHttpClient {
             }
             
             if !defaultRc {
-                onCompletion(json, nil)
+                DispatchQueue.main.async {
+                    onCompletion(json, nil)
+                }
                 return
             }
             
