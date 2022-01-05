@@ -7,7 +7,7 @@ Este SDK esta pensado para las aplicaciones de negocios con ventas presenciales.
 Recomendamos utilizar CocoaPods para integrar Dapp Vendor SDK
 ```ruby
 platform :ios, '11.0'
-pod 'DappVendor', '~> 2.3.0'
+pod 'DappVendor', '~> 2.5.0'
 ```
 De forma estándar el SDK monitorea el estado de los códigos QR POS vía peticiones HTTP.  Existe una versión alternativa que sigue el estado del código QR a través de WebSockets con ayuda de la librería [Starscream](https://github.com/daltoniam/Starscream/). Si deseas utilizar esta versión incluye esta línea en  lugar de la anterior:
 ```ruby
@@ -47,16 +47,27 @@ class ViewController: UIViewController, DappPOSCodeDelegate {
         }
     }
 ```
-2. Inicializa un objeto DappPOSCode y asignale un delegado
+2. Obten el listado de wallets que pueden pagar el código que vas a generar
+```swift
+var wallets = [DappWallet]()
+func getDappCodeWallets() {
+    DappPOSCode.getWallets { (walletsResponse, error) in
+        if let wallets = walletsResponse {
+            self.wallets = wallets
+        }
+    }
+}
+```
+3. Una vez seleccionado el wallet, inicializa un objeto DappPOSCode y asignale un delegado
 ```swift
    var code: DappPOSCode!
     
     func generateDappPOSCode(amount: Double, description: String, reference: String?) {
-        code = DappPOSCode(amount: amount, description: description, reference: reference)
+        code = DappPOSCode(amount: amount, description: description, reference: reference, wallet: wallets[0])
         code.delegate = self
     }
 ```
-3. Genera el código con una de las siguientes funciones:
+4. Genera el código con una de las siguientes funciones:
 ```swift
 code.create()
 //or
@@ -67,24 +78,12 @@ code.createWithImage(size: CGSize(width: 200, height: 200))
 code.listen()
 ```
 ## Envía códigos POS por push notifications
-El comercio puede hacer llegar el cobro al dispositivo de su cliente mediante una notificación push. Para realizar esto, primero debe obtener las apps disponibles para este flujo con la siguiente función.
-```swift
-var destinations = [DappWallet]()
-DappPOSCode.getPushNotificationDestinations { (dappWallets, error) in
-    if let dw = dappWallets {
-    //handle results
-    destinations = dw
-    }
-    else if let e = error {
-    //handle error
-    print(e.localizedDescription)
-    }
-}
-```
+El comercio puede hacer llegar el cobro al dispositivo de su cliente mediante una notificación push. 
+
 Una vez generado el código de cobro y seleccionada la aplicación del cliente llama a la función **sendPushNotification(to: phone:)** del objeto **DappPOSCode**.
 ```swift
-func enviarPush(code: DappPOSCode, wallet: DappWallet, phone: String){
-    code.sendPushNotification(to: wallet, phone: "4264766626") { (success, error) in
+func enviarPush(code: DappPOSCode, phone: String){
+    code.sendPushNotification(to: "4264766626") { (success, error) in
         if success {
             //handle success
         }
@@ -237,3 +236,4 @@ scannerView.qrScannedFailed()
 ```
 ## LICENCIA
 [MIT](../../LICENSE.txt)
+
