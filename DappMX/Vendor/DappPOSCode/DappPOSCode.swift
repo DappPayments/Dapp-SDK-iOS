@@ -29,7 +29,7 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
     public weak var delegate: DappPOSCodeDelegate?
     
     private var expirationMinutes: Int?
-    private var qrSource: Int?
+    private var wallet: DappWallet?
     private var qrSize: CGSize?
     private var helper: DappPOSCodeHelper = DappPOSCodeHelper()
     
@@ -42,7 +42,7 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
     public convenience init(amount: Double, description: String, reference: String? = nil, expirationMinutes: Int? = nil, wallet: DappWallet? = nil) {
         self.init(amount: amount, description: description, reference: reference)
         self.expirationMinutes = expirationMinutes
-        self.qrSource = wallet?.qrSource
+        self.wallet = wallet
     }
     
     public func createWithImage(size: CGSize) {
@@ -55,7 +55,7 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
             print("Dapp: DappPOSCode has already been created before.")
             return
         }
-        DappApiVendor.dappCode(amount: amount, description: description, reference: reference, expirationMintues: expirationMinutes, qrSource: qrSource) {
+        DappApiVendor.dappCode(amount: amount, description: description, reference: reference, expirationMintues: expirationMinutes, qrSource: wallet?.qrSource) {
             (data, error) in
             if let e = error {
                 self.delegate?.dappCode(self, didChangeStatus: .error(e))
@@ -115,35 +115,6 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
         }
     }
     
-    public static func getPushNotificationDestinations(_ onCompletion: @escaping ([DappWallet]?, DappError?) -> ()) {
-        DappApiVendor.dappCodePushDestinations { (data, error) in
-            if let e = error {
-                onCompletion(nil, e)
-                return
-            }
-            guard let json = data, let rc = json["rc"] as? Int else {
-                onCompletion(nil, .responseError(message: nil))
-                return
-            }
-            if rc != 0 {
-                onCompletion(nil, .responseError(message: json["msg"] as? String))
-                return
-            }
-            
-            guard let walletsArray = json["data"] as? [[String: String?]] else {
-                onCompletion(nil, .responseError(message: nil))
-                return
-            }
-            var wallets = [DappWallet]()
-            for json in walletsArray {
-                if let name = json["name"] as? String, let id = json["id"] as? String {
-                    wallets.append(DappWallet(id: id, name: name, qrSource: 1, pushNotifications: true))
-                }
-            }
-            onCompletion(wallets, nil)
-        }
-    }
-    
     public func sendCoDiPushNotification(to phone: String, success: @escaping (Bool, DappError?) -> () ) {
         guard let code = dappId else {
             success(false, .pushNotificationInvalidCode)
@@ -170,9 +141,13 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
         }
     }
     
-    public func sendPushNotification(to wallet: DappWallet, phone: String, success: @escaping (Bool, DappError?) -> () ) {
+    public func sendPushNotification(to phone: String, success: @escaping (Bool, DappError?) -> () ) {
         guard let code = dappId else {
             success(false, .pushNotificationInvalidCode)
+            return
+        }
+        guard let wallet = self.wallet, wallet.pushNotifications else {
+            success(false, .pushNotificationInvalidWallet)
             return
         }
         if phone.count != 10 || Int(phone) == nil {

@@ -11,6 +11,7 @@
 		70398C3424B78D7400E2F0C5 /* DappEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1323D243D2451002591F4 /* DappEncryption.swift */; };
 		70398C3524B78D7A00E2F0C5 /* dapp_prod.pem in Resources */ = {isa = PBXBuildFile; fileRef = 70CBF7D2243E413C0048EF61 /* dapp_prod.pem */; };
 		70398C3624B78D7D00E2F0C5 /* dapp_sandbox.pem in Resources */ = {isa = PBXBuildFile; fileRef = 70CBF7D3243E413C0048EF61 /* dapp_sandbox.pem */; };
+		708497362785301600D0AC6B /* DappPaymentExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708497352785301600D0AC6B /* DappPaymentExt.swift */; };
 		70A91CE024B786B9003EE2C4 /* DappCardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A91CDE24B786B9003EE2C4 /* DappCardProtocol.swift */; };
 		70A91CE124B786B9003EE2C4 /* DappCardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A91CDE24B786B9003EE2C4 /* DappCardProtocol.swift */; };
 		70A91CE224B786B9003EE2C4 /* DappCardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A91CDE24B786B9003EE2C4 /* DappCardProtocol.swift */; };
@@ -94,6 +95,7 @@
 
 /* Begin PBXFileReference section */
 		70398C3224B78D2700E2F0C5 /* DappCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DappCard.swift; sourceTree = "<group>"; };
+		708497352785301600D0AC6B /* DappPaymentExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DappPaymentExt.swift; sourceTree = "<group>"; };
 		70A91CDE24B786B9003EE2C4 /* DappCardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DappCardProtocol.swift; sourceTree = "<group>"; };
 		70B131ED243D2149002591F4 /* DappMX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DappMX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B131F0243D2149002591F4 /* DappMX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DappMX.h; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				70B1325B243D2546002591F4 /* Info.plist */,
 				70B1325C243D2597002591F4 /* DappApiVendor.swift */,
 				70FC39D825E984C8001FD982 /* DappWallet.swift */,
+				708497352785301600D0AC6B /* DappPaymentExt.swift */,
 				70B1325E243D25D3002591F4 /* DappPOSCode */,
 				70B13263243D2610002591F4 /* DappRPCode */,
 			);
@@ -640,6 +643,7 @@
 				70B13250243D2546002591F4 /* DappLoadingView.swift in Sources */,
 				70B13251243D2546002591F4 /* DappCodeProtocol.swift in Sources */,
 				70B13252243D2546002591F4 /* DappPayment.swift in Sources */,
+				708497362785301600D0AC6B /* DappPaymentExt.swift in Sources */,
 				70FC39D925E984C8001FD982 /* DappWallet.swift in Sources */,
 				70B13253243D2546002591F4 /* DictionaryExt.swift in Sources */,
 				70B13262243D25E9002591F4 /* DappPOSCode.swift in Sources */,

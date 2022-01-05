@@ -37,6 +37,7 @@ public enum DappError: Error {
     case invalidURLScheme //customer
     case invalidDappPOSCode //wallet
     case pushNotificationInvalidCode
+    case pushNotificationInvalidWallet
     
     public var localizedDescription: String {
         switch self {
@@ -90,6 +91,8 @@ public enum DappError: Error {
             return "DappError: QR is not a valid DappPOSCode."
         case .pushNotificationInvalidCode:
             return "DappError: Code must be created before sending push notification"
+        case .pushNotificationInvalidWallet:
+            return "DappError: You must set the wallet property to send a push notification"
         }
     }
 }
