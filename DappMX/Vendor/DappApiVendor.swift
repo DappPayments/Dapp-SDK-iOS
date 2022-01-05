@@ -19,6 +19,12 @@ internal class DappApiVendor: DappPOSApiProtocol {
         }
     }
     
+    static func getPayments(_ startDate: Date, endDate: Date, onCompletion: @escaping DappHttpResponse) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        httpRequest(path: "payments?start_date=\(dateFormatter.string(from: startDate))&end_date=\(dateFormatter.string(from: endDate))", method: "GET", defaultRc: false, onCompletion: onCompletion)
+    }
+    
     static func paymentCode(_ code: String, amount: Double, description: String, reference: String?, onCompletion: @escaping DappHttpResponse) {
         var paramsDic: [String: Any] = ["amount": amount,
                                         "description": description]

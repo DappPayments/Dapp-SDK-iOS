@@ -25,7 +25,7 @@ public struct DappPayment {
     public var paymentType: DappPaymentType!
     public var cardLastFour: String?
     
-    internal init(with data: [String: Any]) {
+    internal init(with data: [String: Any?]) {
         if let id = data["id"] as? String {
             self.id = id
         }
