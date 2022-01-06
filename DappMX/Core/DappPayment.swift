@@ -50,8 +50,10 @@ public struct DappPayment {
             self.currency = curr
         }
         
-        if let client = data["client"] as? String {
-            self.client = client
+        if let client = data["client"] as? [String: Any] {
+            if let name = client["name"] as? String {
+                self.client = name
+            }
         }
         
         if let paymentInfo = data["payment"] as? [String: Any] {

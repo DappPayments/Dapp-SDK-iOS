@@ -7,11 +7,11 @@ Este SDK esta pensado para las aplicaciones de negocios con ventas presenciales.
 Recomendamos utilizar CocoaPods para integrar Dapp Vendor SDK
 ```ruby
 platform :ios, '11.0'
-pod 'DappVendor', '~> 2.5.1'
+pod 'DappVendor', '~> 2.5.2'
 ```
 De forma estándar el SDK monitorea el estado de los códigos QR POS vía peticiones HTTP.  Existe una versión alternativa que sigue el estado del código QR a través de WebSockets con ayuda de la librería [Starscream](https://github.com/daltoniam/Starscream/). Si deseas utilizar esta versión incluye esta línea en  lugar de la anterior:
 ```ruby
-pod 'DappVendor/Socket', '~> 2.5.1'
+pod 'DappVendor/Socket', '~> 2.5.2'
 ```
 ## CONFIGURACIÓN
 1. Agrega la siguiente instrucción de importación: 
