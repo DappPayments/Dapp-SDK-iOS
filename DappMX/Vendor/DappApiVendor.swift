@@ -31,7 +31,7 @@ internal class DappApiVendor: DappPOSApiProtocol {
         if let r = reference {
             paramsDic["reference"] = r
         }
-        httpRequest(path: "payments/code/\(code)", parameters: paramsDic, onCompletion: onCompletion)
+        httpRequest(path: "payments/code/\(code.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!)", parameters: paramsDic, onCompletion: onCompletion)
     }
     
     static func dappCodeCodiPush(_ code: String, phone: String, onCompletion: @escaping DappHttpResponse) {
