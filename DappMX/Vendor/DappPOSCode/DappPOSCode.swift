@@ -26,6 +26,8 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
     public var tip: Double?
     public var description: String!
     public var reference: String?
+    public var pos: String?
+    public var pin: String?
     public var urlImage: URL!
     public weak var delegate: DappPOSCodeDelegate?
     
@@ -57,7 +59,7 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
             print("Dapp: DappPOSCode has already been created before.")
             return
         }
-        DappApiVendor.dappCode(amount: amount, description: description, reference: reference, tip: tip, expirationMintues: expirationMinutes, qrSource: wallet?.qrSource) {
+        DappApiVendor.dappCode(amount: amount, description: description, reference: reference, tip: tip, expirationMintues: expirationMinutes, qrSource: wallet?.qrSource, pos: pos, pin: pin) {
             (data, error) in
             if let e = error {
                 self.delegate?.dappCode(self, didChangeStatus: .error(e))

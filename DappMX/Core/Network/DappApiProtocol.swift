@@ -62,7 +62,7 @@ internal extension DappPOSApiProtocol {
         return ""
     }
     
-    static func dappCode(amount: Double, description: String, reference: String?, tip: Double? = nil, expirationMintues: Int? = nil, qrSource: Int? = nil, onCompletion: @escaping DappHttpResponse) {
+    static func dappCode(amount: Double, description: String, reference: String?, tip: Double? = nil, expirationMintues: Int? = nil, qrSource: Int? = nil, pos: String? = nil, pin: String? = nil, onCompletion: @escaping DappHttpResponse) {
         var paramsDic: [String: Any] = ["amount": amount,
                                         "description": description]
         if let r = reference {
@@ -76,6 +76,12 @@ internal extension DappPOSApiProtocol {
         }
         if let t = tip {
             paramsDic["tip"] = t
+        }
+        if let p = pin {
+            paramsDic["pin"] = p
+        }
+        if let p = pos {
+            paramsDic["pos"] = p
         }
         httpRequest(path: "dapp-codes/", parameters: paramsDic, onCompletion: onCompletion)
     }
