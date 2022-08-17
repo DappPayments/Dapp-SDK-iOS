@@ -17,6 +17,7 @@ public class DappCode: DappPOSCodeProtocol {
     
     public var dappId: String?
     public var amount: Double!
+    public var tip: Double?
     public var description: String!
     public var reference: String?
     public weak var delegate: DappCodeDelegate?
@@ -28,10 +29,11 @@ public class DappCode: DappPOSCodeProtocol {
                                   "dappmxqrpago": "QR Pago"]
     private static var didDownloadWalletSchemes = false
 
-    public required init(amount: Double, description: String, reference: String? = nil) {
+    public required init(amount: Double, description: String, reference: String? = nil, tip: Double? = nil) {
         self.amount = amount
         self.description = description
         self.reference = reference
+        self.tip = tip
     }
     
     public init(dappId: String) {
@@ -63,7 +65,7 @@ public class DappCode: DappPOSCodeProtocol {
     }
     
     internal func create() {
-        DappApiCustomer.dappCode(amount: amount, description: description, reference: reference) { (data, error) in
+        DappApiCustomer.dappCode(amount: amount, description: description, reference: reference, tip: tip) { (data, error) in
             if let e = error {
                 self.delegate?.dappCode(self, didFailWithError: e)
                 return

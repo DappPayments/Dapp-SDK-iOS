@@ -23,6 +23,7 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
     public var dappId: String?
     public var qrText: String?
     public var amount: Double!
+    public var tip: Double?
     public var description: String!
     public var reference: String?
     public var urlImage: URL!
@@ -33,14 +34,15 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
     private var qrSize: CGSize?
     private var helper: DappPOSCodeHelper = DappPOSCodeHelper()
     
-    public required init(amount: Double, description: String, reference: String? = nil) {
+    public required init(amount: Double, description: String, reference: String? = nil, tip: Double? = nil) {
         self.amount = amount
         self.description = description
         self.reference = reference
+        self.tip = tip
     }
     
-    public convenience init(amount: Double, description: String, reference: String? = nil, expirationMinutes: Int? = nil, wallet: DappWallet? = nil) {
-        self.init(amount: amount, description: description, reference: reference)
+    public convenience init(amount: Double, description: String, reference: String? = nil, tip: Double? = nil, expirationMinutes: Int? = nil, wallet: DappWallet? = nil) {
+        self.init(amount: amount, description: description, reference: reference, tip: tip)
         self.expirationMinutes = expirationMinutes
         self.wallet = wallet
     }
@@ -55,7 +57,7 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
             print("Dapp: DappPOSCode has already been created before.")
             return
         }
-        DappApiVendor.dappCode(amount: amount, description: description, reference: reference, expirationMintues: expirationMinutes, qrSource: wallet?.qrSource) {
+        DappApiVendor.dappCode(amount: amount, description: description, reference: reference, tip: tip, expirationMintues: expirationMinutes, qrSource: wallet?.qrSource) {
             (data, error) in
             if let e = error {
                 self.delegate?.dappCode(self, didChangeStatus: .error(e))

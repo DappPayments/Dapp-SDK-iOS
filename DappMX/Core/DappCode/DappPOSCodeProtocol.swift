@@ -9,6 +9,7 @@
 import Foundation
 
 internal protocol DappPOSCodeProtocol: DappCodeProtocol {
-    init(amount: Double, description: String, reference: String?)
+    var tip: Double? { get set }
+    init(amount: Double, description: String, reference: String?, tip: Double?)
     func create()
 }
