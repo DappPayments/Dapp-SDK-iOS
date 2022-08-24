@@ -16,7 +16,6 @@ public struct DappPayment {
     
     public var id: String!
     public var amount: Double!
-    public var tip: Double!
     public var date: Date!
     public var description: String!
     public var reference: String?
@@ -34,10 +33,6 @@ public struct DappPayment {
             self.amount = amount
         }
         
-        if let tip = data["tip"] as? Double {
-            self.tip = tip
-        }
-        
         if let desc = data["description"] as? String {
             self.description = desc
         }
@@ -50,13 +45,13 @@ public struct DappPayment {
             self.currency = curr
         }
         
-        if let client = data["client"] as? [String: Any] {
-            if let name = client["name"] as? String {
-                self.client = name
+        if let paymentsArray = data["payments"] as? [[String: Any]] {
+            let paymentInfo = paymentsArray[0]
+            if let client = paymentInfo["client"] as? [String: Any] {
+                if let name = client["name"] as? String {
+                    self.client = name
+                }
             }
-        }
-        
-        if let paymentInfo = data["payment"] as? [String: Any] {
             if let pt = paymentInfo["type"] as? Int {
                 self.paymentType = DappPaymentType(rawValue: pt)
             }

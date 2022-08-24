@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct DappUser {
+public struct DappMerchant {
     
     public var name: String!
     
@@ -16,17 +16,12 @@ public struct DappUser {
     
     public var image: URL?
     
-    public var suggestTip: Bool!
-    
     internal init(with data: [String: Any]) {
         if let name = data["name"] as? String {
             self.name = name
         }
         if let image = data["image"] as? String, let url = URL(string: image) {
             self.image = url
-        }
-        if let tip = data["suggest_tip"] as? Bool {
-            self.suggestTip = tip
         }
         if let address = data["address"] as? String {
             self.address = address

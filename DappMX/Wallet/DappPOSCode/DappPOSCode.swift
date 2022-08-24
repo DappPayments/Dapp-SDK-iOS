@@ -20,7 +20,7 @@ public class DappPOSCode: DappCodeProtocol {
     public var description: String!
     public var reference: String?
     public var currency: String!
-    public var user: DappUser?
+    public var user: DappMerchant?
     public var json = [String: Any]()
     
     private var qrString: String!
@@ -96,8 +96,8 @@ public class DappPOSCode: DappCodeProtocol {
             if let amount = d["amount"] as? Double {
                 code.amount = amount
             }
-            if let userData = d["dapp_user"] as? [String: Any] {
-                code.user = DappUser(with: userData)
+            if let userData = d["merchant"] as? [String: Any] {
+                code.user = DappMerchant(with: userData)
             }
             code.json = d
             onCompletion(nil)

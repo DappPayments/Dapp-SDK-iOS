@@ -65,7 +65,7 @@ public class DappPOSCode: DappPOSCodeProtocol, DappPOSCodeHelperDelegate {
                 self.delegate?.dappCode(self, didChangeStatus: .error(e))
                 return
             }
-            guard let sc = data?["short_code"] as? String, let qrStr = data?["qr_str"] as? String, let qrImg = data?["qr_image"] as? String, let urlImage = URL(string: qrImg) else {
+            guard let sc = data?["id"] as? String, let qrStr = data?["qr_str"] as? String, let qrImg = data?["qr_image"] as? String, let urlImage = URL(string: qrImg) else {
                 self.delegate?.dappCode(self, didChangeStatus: .error(.responseError(message: nil)))
                 return
             }

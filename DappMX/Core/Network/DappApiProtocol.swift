@@ -52,9 +52,9 @@ internal extension DappPOSApiProtocol {
     static var httpURL: String {
         switch Dapp.shared.enviroment {
         case .sandbox:
-            return "https://sandbox.dapp.mx/v1/"
+            return "https://sandbox.dapp.mx/v2/"
         case .production:
-            return "https://api.dapp.mx/v1/"
+            return "https://api.dapp.mx/v2/"
         }
     }
     

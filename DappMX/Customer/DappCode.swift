@@ -70,7 +70,7 @@ public class DappCode: DappPOSCodeProtocol {
                 self.delegate?.dappCode(self, didFailWithError: e)
                 return
             }
-            guard let shortCode = data?["short_code"] as? String else {
+            guard let shortCode = data?["id"] as? String else {
                 self.delegate?.dappCode(self, didFailWithError: .responseError(message: nil))
                 return
             }

@@ -83,7 +83,7 @@
 		70B13279243D2701002591F4 /* DictionaryExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13206243D2215002591F4 /* DictionaryExt.swift */; };
 		70B1327A243D2701002591F4 /* DappRPCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1320D243D22D3002591F4 /* DappRPCodeProtocol.swift */; };
 		70B13284243D28B8002591F4 /* DappApiWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13282243D28B8002591F4 /* DappApiWallet.swift */; };
-		70B13285243D28B8002591F4 /* DappUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13283243D28B8002591F4 /* DappUser.swift */; };
+		70B13285243D28B8002591F4 /* DappMerchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13283243D28B8002591F4 /* DappMerchant.swift */; };
 		70B13289243D290C002591F4 /* DappPOSCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13287243D290C002591F4 /* DappPOSCode.swift */; };
 		70B1328A243D290C002591F4 /* DappPOSCodeScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B13288243D290C002591F4 /* DappPOSCodeScannerController.swift */; };
 		70B1328E243D2948002591F4 /* DappRPCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1328C243D2948002591F4 /* DappRPCode.swift */; };
@@ -131,7 +131,7 @@
 		70B13280243D2701002591F4 /* DappWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DappWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B13281243D2751002591F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70B13282243D28B8002591F4 /* DappApiWallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappApiWallet.swift; sourceTree = "<group>"; };
-		70B13283243D28B8002591F4 /* DappUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappUser.swift; sourceTree = "<group>"; };
+		70B13283243D28B8002591F4 /* DappMerchant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappMerchant.swift; sourceTree = "<group>"; };
 		70B13287243D290C002591F4 /* DappPOSCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappPOSCode.swift; sourceTree = "<group>"; };
 		70B13288243D290C002591F4 /* DappPOSCodeScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappPOSCodeScannerController.swift; sourceTree = "<group>"; };
 		70B1328C243D2948002591F4 /* DappRPCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DappRPCode.swift; sourceTree = "<group>"; };
@@ -317,7 +317,7 @@
 				70B13281243D2751002591F4 /* Info.plist */,
 				70B13282243D28B8002591F4 /* DappApiWallet.swift */,
 				70398C3224B78D2700E2F0C5 /* DappCard.swift */,
-				70B13283243D28B8002591F4 /* DappUser.swift */,
+				70B13283243D28B8002591F4 /* DappMerchant.swift */,
 				70B13286243D28E7002591F4 /* DappPOSCode */,
 				70B1328B243D292B002591F4 /* DappRPCode */,
 			);
@@ -665,7 +665,7 @@
 				70B13284243D28B8002591F4 /* DappApiWallet.swift in Sources */,
 				70B1328F243D2948002591F4 /* DappRPCodeHelper.swift in Sources */,
 				70B13273243D2701002591F4 /* DappPOSCodeProtocol.swift in Sources */,
-				70B13285243D28B8002591F4 /* DappUser.swift in Sources */,
+				70B13285243D28B8002591F4 /* DappMerchant.swift in Sources */,
 				70B13274243D2701002591F4 /* Dapp.swift in Sources */,
 				70B13275243D2701002591F4 /* DappWSClient.swift in Sources */,
 				70B13276243D2701002591F4 /* DappLoadingView.swift in Sources */,
@@ -874,7 +874,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.core;
 				PRODUCT_NAME = DappCore;
 				SKIP_INSTALL = YES;
@@ -903,7 +903,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.core;
 				PRODUCT_NAME = DappCore;
 				SKIP_INSTALL = YES;
@@ -932,7 +932,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.3;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.customer;
 				PRODUCT_NAME = DappCustomer;
 				SKIP_INSTALL = YES;
@@ -962,7 +962,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.3;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.customer;
 				PRODUCT_NAME = DappCustomer;
 				SKIP_INSTALL = YES;
@@ -991,7 +991,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.5;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.vendor;
 				PRODUCT_NAME = DappVendor;
 				SKIP_INSTALL = YES;
@@ -1021,7 +1021,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.5;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.vendor;
 				PRODUCT_NAME = DappVendor;
 				SKIP_INSTALL = YES;
@@ -1049,7 +1049,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.1;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.wallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1078,7 +1078,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.1;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapp.sdk.wallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

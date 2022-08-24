@@ -17,9 +17,9 @@ internal class DappApiWallet: DappApiProtocol {
     static var httpURL: String {
         switch Dapp.shared.enviroment {
         case .production:
-            return "https://wallets.dapp.mx/v1/"
+            return "https://wallets.dapp.mx/v2/"
         case .sandbox:
-            return "https://wallets-sandbox.dapp.mx/v1/"
+            return "https://wallets-sandbox.dapp.mx/v2/"
         }
     }
     

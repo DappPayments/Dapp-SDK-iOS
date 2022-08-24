@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "DappCustomer"
-  spec.version      = "2.2.3"
+  spec.version      = "3.0.0"
   spec.summary      = "Dapp is the new payments network in Mexico."
 
   spec.description  = <<-DESC
