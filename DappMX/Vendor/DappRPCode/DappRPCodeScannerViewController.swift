@@ -19,11 +19,17 @@ public class DappRPCodeScannerViewController: DappScannerViewController {
     private var amount: Double
     private var paymentDescription: String
     private var reference: String?
+    private var tip: Double?
+    private var pos: String?
+    private var pin: String?
 
-    public init(amount: Double, description: String, reference: String? = nil) {
+    public init(amount: Double, description: String, reference: String? = nil, tip: Double? = nil, pos: String? = nil, pin: String? = nil) {
         self.amount = amount
         self.paymentDescription = description
         self.reference = reference
+        self.tip = tip
+        self.pos = pos
+        self.pin = pin
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -41,7 +47,7 @@ public class DappRPCodeScannerViewController: DappScannerViewController {
         scannerView.stopScanning()
         showLoader()
         let rpCode = DappRPCode(code)
-        rpCode.charge(amount, description: paymentDescription, reference: reference) { [weak self] (payment, error) in
+        rpCode.charge(amount, description: paymentDescription, reference: reference, tip: tip, pos: pos, pin: pin) { [weak self] (payment, error) in
             guard let viewController = self else {
                 return
             }

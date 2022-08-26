@@ -16,8 +16,8 @@ public final class DappRPCode: DappRPCodeProtocol {
         self.qrString = qrString
     }
     
-    public func charge(_ amount: Double, description: String, reference: String? = nil, onCompletion: @escaping (DappPayment?, DappError?) -> ()) {
-        DappApiVendor.paymentCode(qrString!, amount: amount, description: description, reference: reference) { (data, error) in
+    public func charge(_ amount: Double, description: String, reference: String? = nil, tip: Double? = nil, pos: String? = nil, pin: String? = nil, onCompletion: @escaping (DappPayment?, DappError?) -> ()) {
+        DappApiVendor.paymentCode(qrString!, amount: amount, description: description, reference: reference, tip: tip, pos: pos, pin: pin) { (data, error) in
             if let e = error {
                 onCompletion(nil, e)
                 return

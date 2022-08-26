@@ -25,11 +25,20 @@ internal class DappApiVendor: DappPOSApiProtocol {
         httpRequest(path: "payments?start_date=\(dateFormatter.string(from: startDate))&end_date=\(dateFormatter.string(from: endDate))", method: "GET", defaultRc: false, onCompletion: onCompletion)
     }
     
-    static func paymentCode(_ code: String, amount: Double, description: String, reference: String?, onCompletion: @escaping DappHttpResponse) {
+    static func paymentCode(_ code: String, amount: Double, description: String, reference: String?, tip: Double?, pos: String?, pin: String?, onCompletion: @escaping DappHttpResponse) {
         var paramsDic: [String: Any] = ["amount": amount,
                                         "description": description]
         if let r = reference {
             paramsDic["reference"] = r
+        }
+        if let t = tip {
+            paramsDic["tip"] = t
+        }
+        if let p = pos {
+            paramsDic["pos"] = p
+        }
+        if let p = pin {
+            paramsDic["pin"] = p
         }
         httpRequest(path: "payments/code/\(code.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!)", parameters: paramsDic, onCompletion: onCompletion)
     }
