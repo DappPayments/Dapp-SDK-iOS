@@ -1,14 +1,12 @@
 # Dapp Customer SDK for iOS
 
-Este SDK esta pensado para las aplicaciones de negocios con ventas no presenciales  y cuenta con dos funcionalidades:
- - Tokenizar tarjetas.
- - Realizar solicitudes de pago a los wallets integrados en el ambiente Dapp.
+Este SDK esta pensado para las aplicaciones de negocios con ventas no presenciales.  Puedes realizar solicitudes de pago a los wallets integrados en el ecosistema a través del Dapp Checkout.
 
 ## INSTALACIÓN
 Recomendamos utilizar CocoaPods para integrar Dapp Customer SDK
 ```
 platform :ios, '11.0'
-pod 'DappCustomer', '~> 3.0.0'
+pod 'DappCustomer', '~> 4.0.0'
 ```
 ## CONFIGURACIÓN
 1. Agrega la siguiente instrucción de importación: 
@@ -23,100 +21,46 @@ Dapp.shared.apiKey = "your-dapp-api-key"
 ```swift
 Dapp.shared.enviroment = .sandbox
 ```
-## TOKENIZAR TARJETAS
-Tokeniza las tarjetas de tus usuarios, guarda la referencia en tu base de datos y realiza pagos con esa tarjeta cuando lo desee el usuario.
+
+## REALIZAR COBROS A TRAVÉS DE DAPP CHECKOUT
+Para realizar cobros dentro de Dapp, los comercios deben generar códigos de cobro que serán pagados por el cliente a través de su aplicación preferida. El cliente puede elegir esta aplicación de manera transparente para el comercio a través de la plataforma Dapp Checkout.
+
+1. Inicializa un objeto DappCode, asignale un delegado y utiliza la función **create**, esta llamada es asíncrona.
+2. Adopta el protocolo _DappCodeDelegate_ e implementa sus métodos para recibir información asociada al código de cobro.
+3. Una vez creado el DappCode, crea una instancia de la clase _DappCheckoutViewController_ y preséntalo.
+4. Cuando el usuario haya realizado el pago, el _DappCheckoutViewController_ se dejará de presentar y recibirás una notificación de cambio de estatus a pagado en el _DappCodeDelegate_ que implementaste.
 ```swift
 import DappCustomer
 
-class ViewController: UIViewController {
-
-override func viewDidLoad() {
-    super.viewDidLoad()
-}
-
-func tokenizeCardButton() {
-    let card: String = "5515150180013278"
-    let name: String = "Daenerys Targaryen"
-    let cvv: String = "123"
-    let month: String = "01"
-    let year: String = "2030"
-    let mail: String = "daenerys@gameofthrones.com"
-    let phone: String = "5512345678"
+class ViewController: UIViewController, DappPOSCodeDelegate {
     
-    //prepare UI for the async call
-    DappCard.add(card, cardholder: name, cvv: cvv, expMonth: month, expYear: year, email: mail, phoneNumber: phone) { (card, error) in
-    //handle the response results
-        if let c = card {
-        print(c.token!)
-        }
-        else {
-        print(error!.localizedDescription)
-        }
-    }
-}
-
-```
-## REALIZAR PAGOS
-Realiza solicitudes de pago a cualquier walllet integrado al ambiente Dapp que el usuario tenga instalado en su dispositivo.
-
-1. Configurar el archivo **info.plist**. Haz clic con el botón derecho en el archivo info.plist y elige **Open As Source Code**. Copia y pega el siguiente fragmento de código XML en el cuerpo de tu archivo. Cambia el valore de _uniqueappid_  con datos únicos referentes a tu aplicación
-```xml    
-<key>LSApplicationQueriesSchemes</key>
-<array>
-    <string>dappmxqrpago</string>
-    <string>dappmxsantander</string>
-</array>
-<key>CFBundleURLTypes</key>
-<array>
-    <dict>
-        <key>CFBundleURLSchemes</key>
-        <array>
-            <string>uniqueappid</string>
-        </array>
-    </dict>
-</array>
-```
-2. Asegurate que exista un wallet instalado en el dispositivo de tu usuario con la función **DappCode.paymentsAvailable()**
-
-3. Crea un objeto DappCode, asigna un delegado para poder obtener la respuesta del pago y utiliza la funcion **pay(from:)**
-```swift
-import DappCustomer
-
-class ViewController: UIViewController, DappCodeDelegate {
-
-    var dappCode: DappCode!
-
-    override func viewDidLoad() {
-    super.viewDidLoad()
+    var code: DappCode!
+    
+    func generateDappCode(amount: Double, description: String, reference: String?) {
+        code = DappCode(amount: amount, description: description)
+        code.delegate = self
+        code.create() //async call, handle UI: show loader
     }
     
-    func paymentButton() {
-        if DappCode.paymentsAvailable() {
-            dappCode = DappCode(amount: 100, description: "descripción de la venta")        
-            dappCode.delegate = self
-            dappCode.pay(from: self)
+    //MARK: - DappPOSCodeDelegate
+    func dappCode(_ dappCode: DappPOSCode, didChangeStatus status: DappPOSCodeStatus) {
+        //handle results...
+        switch status {
+        case .created:
+            //dappCode created, handle UI: dismiss loader, present checkout
+            let vc = DappCheckoutViewController(dappCode: dappCode)
+            present(vc, animated: true, completion: nil)
+            break
+        case .payed(let payment):
+            //payment received, checkout has been dismissed, handle UI
+            break
+        case .error(let error):
+            //error in payment, handle UI
+            break
         }
-        else {
-        //alternate flow...
-        }
-    }
-    
-    func dappCode(_ code: DappCode, didSucceedWithPayment paymentId: String) {
-        //handle success validations...
-        print(paymentId)
-    }
-    
-    func dappCode(_ code: DappCode, didFailWithError error: DappError) {
-        //handle error...
-        print(error)
     }
 ```
-4. Agrega el metodo **application(\_:open:options)** en el **AppDelegate**
-```swift
-func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-    let handled = Dapp.application(app, open: url, options: options)
-    return handled
-}
-```
+
 ## LICENCIA
 [MIT](../../LICENSE.txt)
+

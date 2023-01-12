@@ -8,9 +8,7 @@ Esta librería te permite integrar Dapp en tu aplicación iOS. Cuenta con tres s
  - **Dapp Wallet SDK**
 
 ## [Dapp Customer SDK for iOS](DappMX/Customer)
-Este SDK esta pensado para las aplicaciones de negocios con ventas no presenciales  y cuenta con dos funcionalidades:
- - Tokenizar tarjetas.
- - Realizar solicitudes de pago a los wallets integrados en el ambiente Dapp.
+Este SDK esta pensado para las aplicaciones de negocios con ventas no presenciales.  Puedes realizar solicitudes de pago a los wallets integrados en el ecosistema a través del Dapp Checkout.
 
 ## [Dapp Vendor SDK for iOS](DappMX/Vendor)
 Este SDK esta pensado para las aplicaciones de negocios con ventas presenciales. Cuenta con dos funciones principales:

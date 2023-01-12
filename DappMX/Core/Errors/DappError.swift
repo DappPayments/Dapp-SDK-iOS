@@ -38,6 +38,7 @@ public enum DappError: Error {
     case invalidDappPOSCode //wallet
     case pushNotificationInvalidCode
     case pushNotificationInvalidWallet
+    case dappCodeNotCreated
     
     public var localizedDescription: String {
         switch self {
@@ -93,6 +94,8 @@ public enum DappError: Error {
             return "DappError: Code must be created before sending push notification"
         case .pushNotificationInvalidWallet:
             return "DappError: You must set the wallet property to send a push notification"
+        case .dappCodeNotCreated:
+            return "DappError: Dapp code has not been created yet"
         }
     }
 }
